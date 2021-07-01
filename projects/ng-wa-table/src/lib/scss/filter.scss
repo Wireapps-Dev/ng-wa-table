@@ -1,0 +1,212 @@
+@import "./theme.scss";
+
+:focus {
+    outline: 0 !important;
+}
+
+.filterMainDiv {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.filterMainDivHide {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px;
+}
+
+.shop-switch {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.shop-switch > .switch {
+    border: none;
+    margin-left: 10px;
+}
+
+.leftFilter-active {
+    background: $primary;
+    border: none;
+    width: 80px;
+    height: 42px;
+    border-radius: $borderRadius-left;
+    color: $text-color-white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    cursor: pointer;
+}
+
+.leftFilter-inactive {
+    background-color: transparent;
+    /* // background-color: red; */
+    width: 80px;
+    height: 42px;
+    border: 0.5px solid $primary;
+    border-radius: $borderRadius-left;
+    color: $primary;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.middleFilter-active {
+    background: $primary;
+    border: none;
+    width: 80px;
+    height: 42px;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    cursor: pointer;
+}
+
+.middleFilter-inactive {
+    background-color: transparent;
+    border: 0.5px solid $primary;
+    /* border-left: none; */
+    /* border-right: none; */
+    width: 80px;
+    height: 42px;
+    color: $primary;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.rightFilter-active {
+    border: none;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    color: #ffffff;
+    background: $primary;
+    border-radius: 0px 6px 6px 0px;
+    width: 80px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.rightFilter-inactive {
+    border: 0.5px solid $primary;
+    background-color: transparent;
+
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    color: $primary;
+    border-radius: 0px 6px 6px 0px;
+    width: 80px;
+    height: 42px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.datepicker-input {
+    height: $input-height;
+    width: 240px;
+}
+
+.btn-filter {
+    width: 100px;
+    height: 42px;
+    background: $primary;
+    border: none;
+    border-radius: 6px;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.filterCol {
+    margin-top: 15px;
+    padding: 0px;
+}
+
+.filtersBox {
+    margin: 0px;
+    padding: 20px;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    width: 484px;
+}
+
+.filtersBoxAdmin {
+    margin: 0px;
+    padding: 20px;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    width: 242px;
+}
+
+.superAdmin {
+    display: block !important;
+}
+
+.admin {
+    display: none !important;
+}
+
+.normalUser {
+}
+
+.filtersRow {
+    margin: 0px;
+}
+
+.filterLbl {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.filter-btn {
+    padding: 10px 0px;
+}
+
+.filterInput {
+    width: 200px;
+    margin-right: 42px;
+    font-size: 12px;
+}
+
+.filterInput2 {
+    width: 200px;
+    font-size: 12px;
+}
+
+@media (max-width: 1400px) {
+    .filtersBox {
+        margin: 0px;
+        padding: 20px;
+        border: 1px solid #c4c4c4;
+        border-radius: 5px;
+        width: 442px;
+    }
+
+    .filterInput {
+        width: 200px;
+        padding-right: 42px;
+        font-size: 12px;
+    }
+
+    .filterInput2 {
+        width: 200px;
+        font-size: 12px;
+    }
+}

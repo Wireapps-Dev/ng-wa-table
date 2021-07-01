@@ -1,0 +1,94 @@
+
+.dashboardTile-inner {
+    text-align: left;
+}
+
+.txtorderCount {
+    color: white;
+    font-weight: bolder;
+}
+.txt-caption {
+    color: white;
+}
+
+.dashboardTile-Total {
+    height: 100px;
+    background-color: #00c1f3;
+    border-radius: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dashboardTile-Total:hover {
+    background-color: #02b1de;
+}
+
+
+
+.dashboardTile-Accepted{
+    height: 100px ;
+    background-color: #00af5d;
+    border-radius: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dashboardTile-Accepted:hover{
+    background-color: #0bc86f;
+}
+
+.dashboardTile-Completed{
+    height: 100px ;
+    background-color: #2e5596;
+    border-radius: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dashboardTile-Completed:hover{
+    background-color: #2f6cd0;
+}
+
+.dashboardTile-Ready{
+    height: 100px ;
+    background-color: #444444;
+    border-radius: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dashboardTile-Ready:hover{
+    background-color: #5f5f5f;
+}
+
+.dashboardTile-Declined{
+    height: 100px ;
+    background-color: #ff9400;
+    border-radius: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.dashboardTile-Declined:hover{
+    background-color: #f19c25;
+}
+
+
+.dashboardTile-Canceled{
+    height: 100px ;
+    background-color: #ff5c4c;
+    border-radius: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dashboardTile-Canceled:hover{
+    background-color: #fd0c0c;
+}

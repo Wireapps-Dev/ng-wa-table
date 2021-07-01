@@ -10,6 +10,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "ng-wa-table": [
+        "dist/ng-wa-table/ng-wa-table",
+        "dist/ng-wa-table"
+      ]
+    },
     "target": "es2015",
     "module": "es2020",
     "lib": [

@@ -1,0 +1,150 @@
+@import "./theme.scss";
+
+.itemModal-content {
+    width: 700px !important;
+    border-radius: 16px !important;
+    padding: 0;
+}
+
+.itemModal-body {
+    padding: 0px;
+}
+
+.modalHeader {
+    display: flex;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.hr-line {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.content {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.input-props-52px {
+    height: 42px;
+    font-size: 14px;
+}
+
+.input-twin {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-twin-each {
+    font-size: 14px;
+    width: 45%;
+}
+
+.input-twin-each-image {
+    font-size: 14px;
+}
+
+.input-twin-each-desc {
+    width: 100%;
+}
+
+.input-twin-with-image {
+    display: flex;
+}
+
+.image-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+// .overlay {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     height: 50%;
+//     width: 50%;
+//     opacity: 0;
+//     transition: .5s ease;
+//     background-color: #008CBA;
+//   }
+
+// #navitem:hover{
+//     opacity: 0.2;
+//     background-color: red;
+// }
+
+// .text {
+//     color: red;
+//     font-size: 20px;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     -webkit-transform: translate(-50%, -50%);
+//     -ms-transform: translate(-50%, -50%);
+//     transform: translate(-50%, -50%);
+//     text-align: center;
+//   }
+
+.desc-form-group {
+    padding-left: 50px;
+}
+
+.sub-heading-item-modal {
+    font-weight: bold;
+}
+
+.platform-content {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.platform-content-heading {
+    font-size: 14px;
+    width: 25%;
+}
+
+.platform-content-heading-ava {
+    font-size: 14px;
+    width: 25%;
+    text-align: center;
+}
+
+.platform-content-platforms-section {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    width: 25%;
+}
+
+.platform-content-availability-section {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+
+// .bootstrap-select >  button{
+//     height: 52px !important;
+//     background: white !important;
+//     border: 1px solid !important;
+// }
+
+// #spicker_category{
+//     height: 52px !important;
+//     background: white !important;
+//     border: 1px solid !important;
+// }
+
+// .dropdownCustomStyle {
+//     height: 52px !important;
+//  }
+//  .dropdownCustomStyle .filter-option {
+//      display: contents;
+//  }
