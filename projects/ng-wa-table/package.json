@@ -1,6 +1,41 @@
 {
   "name": "ng-wa-table",
   "version": "0.0.1",
+  "author": {
+    "name": "Wire Apps",
+    "url": "https://github.com/Wireapps-Dev"
+  },
+  "contributors": [
+    {
+      "name": "Hasitha Walpola",
+      "email": "walpolhasitha@gmail.com",
+      "url": "https://github.com/hasithaWalpola"
+    },
+    {
+      "name": "Limani Rathnayake",
+      "email": "lpw.ratnayake@gmail.com",
+      "url": "https://github.com/limiRatnayake"
+    }
+  ],
+  "keywords": [
+    "angular",
+    "angular7",
+    "typescript",
+    "ngx",
+    "ng2",
+    "ng4",
+    "ng5",
+    "ng6",
+    "ng7",
+    "table"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wireapps-Dev/ng-wa-table.git"
+  },
+  "homepage": "https://github.com/Wireapps-Dev/ng-wa-table.git",
+  "bugs": "https://github.com/Wireapps-Dev/ng-wa-table.git/issues",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^11.2.14",
     "@angular/core": "^11.2.14"
