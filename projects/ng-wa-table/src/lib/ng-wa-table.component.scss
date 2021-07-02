@@ -1,8 +1,3 @@
-@import "./scss/theme.scss";
-@import "./scss/item-modal.scss";
-@import "./scss/filter.scss";
-@import "./scss/modal.scss";
-
 .headingRow {
     display: flex;
     justify-content: space-between;
@@ -80,37 +75,6 @@
         width: 950px;
     }
 }
-// .submenu-filter {
-//     background-color: #fcfbfb;
-//     height: 35px;
-//     margin: 10px 0px;
-// }
-
-// .submenu-filter-item-inactive {
-//     padding: 0px;
-//     display: flex;
-//     justify-content: center;
-//     padding-top: 5px;
-//     font-style: normal;
-//     font-size: 14px;
-//     color: #898989;
-//     cursor: pointer;
-// }
-
-// .submenu-filter-item-active {
-//     padding: 0px;
-//     display: flex;
-//     justify-content: center;
-//     font-style: normal;
-//     font-size: 14px;
-//     padding-top: 5px;
-//     color: #000000;
-//     border-bottom: solid;
-//     border-bottom-width: 3px;
-//     border-bottom-color: #2d5697;
-//     cursor: pointer;
-// }
-
 .second-row-filter {
     margin: 15px 0px;
     display: flex;
@@ -195,17 +159,6 @@
     font-style: normal;
     font-size: 14px;
 }
-
-// .bulk-actions-filter {
-//     height: 40px;
-//     margin: 0px;
-// }
-
-// .bulk-action-item {
-//     padding-left: 0px;
-//     padding-right: 15px;
-// }
-
 .actions {
     text-align: center;
    // vertical-align: middle;
@@ -257,20 +210,6 @@ table.dataTable tfoot th {
     justify-content: center;
     align-items: center;
 }
-
-// .dlt-btn {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin-top: 25px;
-//     background-color: #dc4a4a;
-//     height: 42px;
-//     border-radius: 5px;
-//     color: white;
-//     font-size: 14px;
-//     cursor: pointer;
-// }
-
 
 .table-responsive {
     overflow-y: auto !important;
@@ -427,12 +366,6 @@ li.disabled {
 .pagination-right ul{
  margin: 0;
 }
-// .page-item a{
-
-//     padding-right: 20px;
-//     cursor: pointer;
-//     color: #2d5697;
-// }
 #inputRow{
     margin-top: 0;
     align-items: center;
@@ -604,3 +537,6 @@ li.disabled {
     text-align: center;
 }
 
+.navItem{
+    width: 100%;
+}
