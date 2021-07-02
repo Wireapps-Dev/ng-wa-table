@@ -9,11 +9,9 @@ export class NgWaTableComponent implements OnInit {
 
   @Input() isDataLoaded: boolean;
   @Input() tableData: any;
-  @Input() tableKeys: any;
-  @Input() colTypes: any;
-  @Input() tableConfig: any; 
+  @Input() tableHeaders: Array<object>; 
+  @Input() tableColumns: Array<object>; 
   @Input() tableAction: any; 
-  @Input() tablePOSAction: any; 
   @Input() currentPage: any; 
   @Input() pages: any  ; 
   @Input() visiblePages: any  ; 
@@ -24,15 +22,14 @@ export class NgWaTableComponent implements OnInit {
   @Input() sortName_dsc: boolean  ; 
   @Input() categoryActive: number  ; 
   @Input() categories: any; 
-  @Input() tableInfo: any; 
   @Input() isFilterClicked: any; 
   @Input() orderActionFilterSelected: any; 
   @Input() oderActionsSelector: any; 
   @Input() master_outlet_id: any; 
-  @Input() filterClickHeight: any; 
-  @Input() filterNotClickHeight: any; 
+  @Input() filterClickTableHeight: any; 
+  @Input() filterNotClickTableHeight: any; 
   @Input() isAllSelected: any; 
-  @Input() selectedMenuItems: any; 
+  @Input() selectedItems: any; 
   @Input() noItemsAvailable: any; 
   @Input() filterSearchAvailability: any; 
   @Input() policies: any; 
@@ -57,7 +54,6 @@ export class NgWaTableComponent implements OnInit {
   @Output() open = new EventEmitter<{text:any ,id:any}>();
   @Output() checkboxSelector = new EventEmitter<any>();
   @Output() selectItem = new EventEmitter<{item: any, event: any}>();
-  // @Output() onChangeAutoAccepting: EventEmitter<{int:any, e:any}> = new EventEmitter();
   
   constructor() {
 

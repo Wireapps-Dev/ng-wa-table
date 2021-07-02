@@ -1,5 +1,5 @@
 <div class="tab-content">
-
+  
     <div class="" style="padding-top: 20px">
       <div class="card col-md-12">
         <!-- Filters -->
@@ -10,15 +10,15 @@
             <div *ngIf="filterAvailability" class=" p-2">
               <button type="button" class="btn-filter" data-toggle="collapse" data-target="#filterCollapseTwo"
                 aria-expanded="false" aria-controls="collapseExample" (click)=onShowFilter()>
-                <!-- <img src="./assets/icons/filter-icon.png" id="navitem" width="16px" height="16px" alt=""
-                  loading="lazy" style="margin: 0px 5px ;"> -->
+                <img src="./assets/icons/filter-icon.png" id="navitem" width="16px" height="16px" alt=""
+                loading="lazy" style="margin: 0px 5px ;">
                 Filters
               </button>
             </div>
             <!-- Search Input -->
             <div *ngIf="filterSearchAvailability" class="mr-auto p-2 col-sm-6  has-search">
               <div class="form-control-feedback ">
-                <!-- <img src="./assets/icons/search-icon.png"> -->
+                <img src="./assets/icons/search-icon.png">
               </div>
               <input class="form-control search-filter" type="text" placeholder="Search" (keyup)="onSearchItems($event)">
             </div>
@@ -61,13 +61,13 @@
         <!-- table -->
         <div class="row">
           <div class="col-md-12 table-responsive"
-            [style.height.vh]="!isFilterClicked ? filterNotClickHeight : filterClickHeight"
+            [style.height.vh]="!isFilterClicked ? filterNotClickTableHeight : filterClickTableHeight"
             style="padding: 0; margin: 0; ">
             <table class="table customerTable" style="border-spacing: 0px !important;">
               <thead style="border-spacing: 0px !important;">
                 <tr>
                   <!-- Table Heading -->
-                  <th scope="col" *ngFor="let field of tableConfig" [ngClass]="field.classType ">{{field.header}}
+                  <th scope="col" *ngFor="let field of tableHeaders" [ngClass]="field.classType ">{{field.header}}
   
                     <div *ngIf="field.header == 'POS Actions'" style="display: inline;">
                       <img src="./../assets/icons/help.png" id="navitem" width="16px" height="16px" alt=""
@@ -145,7 +145,7 @@
                 <ng-container *ngIf="isDataLoaded && tableData.length !=0; else elseBlockUser">
                   <tr *ngFor="let data of tableData let idx = index">
   
-                    <td scope="row" *ngFor="let key of tableInfo" [ngClass]='key.classType'>
+                    <td scope="row" *ngFor="let key of tableColumns" [ngClass]='key.classType'>
   
                       <ng-container *ngIf="key.type == 'String'">
                         {{data[key.header]}}
@@ -155,7 +155,7 @@
                         <div class="custom-control custom-checkbox" id="checkbox" appTableAction [policies]="policies">
   
                           <input type="checkbox" class="custom-control-input itemCheck"
-                            [checked]="(selectedMenuItems.indexOf(data[key.header])) != -1" id="{{data[key.header]}}"
+                            [checked]="(selectedItems.indexOf(data[key.header])) != -1" id="{{data[key.header]}}"
                             (change)="onSelectItem(data, $event)">
                           <label class="custom-control-label lblCheckbox" id="labelCheckbox"
                             for="{{data[key.header]}}"></label>
