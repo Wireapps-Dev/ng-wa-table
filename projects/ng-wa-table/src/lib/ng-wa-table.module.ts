@@ -1,5 +1,5 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgWaTableComponent } from './ng-wa-table.component';
 
 
@@ -9,7 +9,7 @@ import { NgWaTableComponent } from './ng-wa-table.component';
     NgWaTableComponent
   ],
   imports: [
-    BrowserModule
+    CommonModule
   ],
   exports: [
     NgWaTableComponent
