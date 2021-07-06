@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./ng-wa-table.component.scss']
 })
 export class NgWaTableComponent implements OnInit {
-
+  
   @Input() isDataLoaded: boolean;
   @Input() tableData: any;
   @Input() tableHeaders: Array<object>; 
@@ -36,6 +36,8 @@ export class NgWaTableComponent implements OnInit {
   @Input() posSyncPolicy: any; 
   @Input() access: any; 
   @Input() toggleAccess : any; 
+  @Input() searchBarColor : any;
+  @Input() tableHeaderColor : any;
   
   @Output() onEditClick = new EventEmitter<any>();
   @Output() onDeleteClick = new EventEmitter<any>();

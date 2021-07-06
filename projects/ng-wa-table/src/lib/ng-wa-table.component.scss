@@ -287,7 +287,8 @@ table.dataTable tfoot th {
     position: sticky !important;
     top: 0 !important;
     //margin-top: 10px;
-    background-color: #ECF3FF;
+    // background-color: #ECF3FF;
+    background-color: var(--tableHeaderColor);
     z-index: 1;
 }
 .actions-set{
@@ -373,9 +374,11 @@ li.disabled {
 
 //search
 .search-filter{
-    background-color: #ECF3FF ;
+    // background-color: #ECF3FF ;
+    background-color: var(--searchBarColor) ;
     border: none;
     padding: 10px;
+   
 }
 .has-search .form-control {
     padding-left: 62px;

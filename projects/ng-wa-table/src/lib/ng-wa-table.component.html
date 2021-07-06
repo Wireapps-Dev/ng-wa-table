@@ -1,5 +1,5 @@
 <div class="tab-content">
-  
+
     <div class="" style="padding-top: 20px">
       <div class="card col-md-12">
         <!-- Filters -->
@@ -10,7 +10,7 @@
             <div *ngIf="filterAvailability" class=" p-2">
               <button type="button" class="btn-filter" data-toggle="collapse" data-target="#filterCollapseTwo"
                 aria-expanded="false" aria-controls="collapseExample" (click)=onShowFilter()>
-                <img src="./assets/icons/filter-icon.png" id="navitem" width="16px" height="16px" alt=""
+                <img src="../../assets/icons/filter-icon.png" id="navitem" width="16px" height="16px" alt=""
                 loading="lazy" style="margin: 0px 5px ;">
                 Filters
               </button>
@@ -20,7 +20,7 @@
               <div class="form-control-feedback ">
                 <img src="./assets/icons/search-icon.png">
               </div>
-              <input class="form-control search-filter" type="text" placeholder="Search" (keyup)="onSearchItems($event)">
+              <input class="form-control search-filter" [style.--searchBarColor]="searchBarColor" type="text" placeholder="Search" (keyup)="onSearchItems($event)">
             </div>
           </div>
           <!-- Filter Options -->
@@ -67,7 +67,7 @@
               <thead style="border-spacing: 0px !important;">
                 <tr>
                   <!-- Table Heading -->
-                  <th scope="col" *ngFor="let field of tableHeaders" [ngClass]="field.classType ">{{field.header}}
+                  <th scope="col" *ngFor="let field of tableHeaders" [style.--tableHeaderColor]="tableHeaderColor" [ngClass]="field.classType ">{{field.header}}
   
                     <div *ngIf="field.header == 'POS Actions'" style="display: inline;">
                       <img src="./../assets/icons/help.png" id="navitem" width="16px" height="16px" alt=""
