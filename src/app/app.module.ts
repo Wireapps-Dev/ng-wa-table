@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgWaTableModule } from 'projects/ng-wa-table/src/public-api';
 
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     CommonModule,
-    NgWaTableModule
+    NgWaTableModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
