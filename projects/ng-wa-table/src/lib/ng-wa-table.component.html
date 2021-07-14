@@ -10,15 +10,17 @@
             <div *ngIf="filterAvailability" class=" p-2">
               <button type="button" class="btn-filter" data-toggle="collapse" data-target="#filterCollapseTwo"
                 aria-expanded="false" aria-controls="collapseExample" (click)=onShowFilter()>
-                <img src="../../assets/icons/filter-icon.png" id="navitem" width="16px" height="16px" alt=""
-                loading="lazy" style="margin: 0px 5px ;">
+                <!-- <img src="../../assets/icons/filter-icon.png" id="navitem" width="16px" height="16px" alt=""
+                loading="lazy" style="margin: 0px 5px ;"> -->
+                <i class="fas fa-filter"></i>
                 Filters
               </button>
             </div>
             <!-- Search Input -->
             <div *ngIf="filterSearchAvailability" class="mr-auto p-2 col-sm-6  has-search">
               <div class="form-control-feedback ">
-                <img src="./assets/icons/search-icon.png">
+                <i class="fas fa-search"></i>
+                <!-- <img src="./assets/icons/search-icon.png"> -->
               </div>
               <input class="form-control search-filter" [style.--searchBarColor]="searchBarColor" type="text" placeholder="Search" (keyup)="onSearchItems($event)">
             </div>
