@@ -169,18 +169,28 @@ table.dataTable tfoot th {
     
 }
 
-.tableHeader {
+.tableHeader-left {
+    text-align: left;
+}
+.tableHeader-center {
     text-align: center;
 }
-
-.tableDataFirstCol {
-    font-size: 14px;
+.tableHeader-right {
+    text-align: right;
 }
 
-.tableData {
-    
+
+.tableColumnData-left {
+    font-size: var(--bodyFontSize);
+    text-align: left;
+}
+.tableColumnData-center {
     font-size: var(--bodyFontSize);
     text-align: center;
+}
+.tableColumnData-right {
+    font-size: var(--bodyFontSize);
+    text-align: right;
 }
 
 .tableDataStatus {
@@ -345,13 +355,14 @@ search
 .has-search .form-control {
     padding-left: 62px;
 }
-.has-search .form-control-feedback img{
+.has-search .form-control-feedback i{
     position: absolute;
     top: 34%;
     left: 5%;
     width: 20px;
     display: flex;
     justify-content: center;
+    color: #2D5697;;
 }
 ::placeholder {
     color: #2D5697;

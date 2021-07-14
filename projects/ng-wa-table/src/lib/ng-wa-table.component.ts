@@ -22,18 +22,13 @@ export class NgWaTableComponent implements OnInit {
   @Input() sortName_dsc: boolean  ; 
   @Input() categoryActive: number  ; 
   @Input() categories: any; 
-  @Input() isFilterClicked: any; 
-  @Input() orderActionFilterSelected: any; 
-  @Input() oderActionsSelector: any; 
-  @Input() master_outlet_id: any; 
+  @Input() isFilterClicked: any;  
   @Input() filterClickTableHeight: any; 
   @Input() filterNotClickTableHeight: any; 
   @Input() isAllSelected: any; 
   @Input() selectedItems: any; 
   @Input() noItemsAvailable: any; 
   @Input() filterSearchAvailability: any; 
-  @Input() policies: any; 
-  @Input() posSyncPolicy: any; 
   @Input() access: any; 
   @Input() toggleAccess : any; 
   @Input() searchBarColor : any;
@@ -45,7 +40,6 @@ export class NgWaTableComponent implements OnInit {
   @Output() onEditClick = new EventEmitter<any>();
   @Output() onDeleteClick = new EventEmitter<any>();
   @Output() onViewClick = new EventEmitter<any>();
-  @Output() onMappingClick = new EventEmitter<any>();
   @Output() getMoreItems = new EventEmitter<any>();
   @Output() refreshFilters = new EventEmitter<any>();
   @Output() showFilter = new EventEmitter<any>();
@@ -53,7 +47,6 @@ export class NgWaTableComponent implements OnInit {
   @Output() onStateChange = new EventEmitter<any>();
   @Output() searchItems = new EventEmitter<any>();
   @Output() itemSort = new EventEmitter<any>();
-  @Output() posActionsClick = new EventEmitter<any>();
   @Output() onChangeAccepting = new EventEmitter<{int:any, e:any}>();
   @Output() onChangeAutoAccepting = new EventEmitter<{int:any, e:any}>();
   @Output() open = new EventEmitter<{text:any ,id:any}>();
@@ -68,19 +61,7 @@ export class NgWaTableComponent implements OnInit {
    
   }
 
-  setDisplayId(id: any) {
-    let s = id + "";
-    while (s.length < 5) s = "0" + s;
-    return s;
-
-  }
-
-
-  setData(data: any) {
-    console.log(data, 'data')
-    //return s;
-
-  }
+  
 
   onClickAction(type: any, data){
     switch (type) {
@@ -93,18 +74,13 @@ export class NgWaTableComponent implements OnInit {
       case "Delete":
         this.onDeleteClick.emit(data)
         break; 
-      case "Map":
-        this.onMappingClick.emit(data)
-        break;
     
       default:
         break;
     }
   }
 
-  onPosActionsClick(data){
-    this.posActionsClick.emit(data)
-  }
+ 
 
   getPages(pageNumber: any){
     console.log(pageNumber)
@@ -151,10 +127,6 @@ export class NgWaTableComponent implements OnInit {
     else if(key === "isAutoAccepting"){
       this.onChangeAutoAccepting.emit({int:data, e:accept})
     }
-  }
-  
-  onOpen(text:any, id:any){
-    this.open.emit({text, id})
   }
 
   getRefreshFilters() {
