@@ -20,11 +20,10 @@ export class NgWaTableComponent implements OnInit {
   @Input() filterAvailability: boolean  ; 
   @Input() sortName_asc: boolean  ; 
   @Input() sortName_dsc: boolean  ; 
-  @Input() categoryActive: number  ; 
-  @Input() categories: any; 
+  @Input() tagActive: number  ; 
+  @Input() filterTags: any; 
   @Input() isFilterClicked: any;  
-  @Input() filterClickTableHeight: any; 
-  @Input() filterNotClickTableHeight: any; 
+  @Input() tableHeight: any; 
   @Input() isAllSelected: any; 
   @Input() selectedItems: any; 
   @Input() noItemsAvailable: any; 
@@ -43,9 +42,9 @@ export class NgWaTableComponent implements OnInit {
   @Output() getMoreItems = new EventEmitter<any>();
   @Output() refreshFilters = new EventEmitter<any>();
   @Output() showFilter = new EventEmitter<any>();
-  @Output() categoryPressed = new EventEmitter<any>();
+  @Output() tagPressed = new EventEmitter<any>();
   @Output() onStateChange = new EventEmitter<any>();
-  @Output() searchItems = new EventEmitter<any>();
+  @Output() search = new EventEmitter<any>();
   @Output() itemSort = new EventEmitter<any>();
   @Output() onChangeAccepting = new EventEmitter<{int:any, e:any}>();
   @Output() onChangeAutoAccepting = new EventEmitter<{int:any, e:any}>();
@@ -100,20 +99,12 @@ export class NgWaTableComponent implements OnInit {
     }
   }
 
-  onCategoryPressed(id: number){
-    this.categoryPressed.emit(id)
-
-    if(id === 0){
-      this.onStateChange.emit("All")
-    }else if(id === 1){
-      this.onStateChange.emit("Match Found")
-    }else{
-      this.onStateChange.emit("Not Found")
-    }
+  onTagPressed(id: number){
+    this.tagPressed.emit(id)
   }
 
-  onSearchItems(event){
-    this.searchItems.emit(event)
+  onSearch(event){
+    this.search.emit(event)
   }
 
   onItemSort(){
