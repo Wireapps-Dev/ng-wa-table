@@ -1,7 +1,8 @@
 # NgWaTable
+---
 
 The NGWaTable is an command-line tool and powerful library to create unique and basic table using Angular. The goal is to avoid code duplication while keeping the table flexible enough to handle different types of data.
----
+
 ### Features
 ---
 
@@ -14,7 +15,7 @@ The NGWaTable is an command-line tool and powerful library to create unique and 
 - Table data Loader through ``ngx-skeleton-loader``
 
 ### Installation
-
+---
 ```code
 
 npm install ng-wa-table
@@ -22,7 +23,7 @@ npm install ng-wa-table
 ```
 
 ### How To Use
-
+---
 Import the NgWaTableModule into your app.module.ts file. Then use the bellow code into your component.html file.
 
 ```code
@@ -31,7 +32,7 @@ Import the NgWaTableModule into your app.module.ts file. Then use the bellow cod
 ```
 
 #### Props
-
+---
 These properties should pass in order to display the rows and columns of the table,
 
 | Name                    | Type          | Description                                                         |
