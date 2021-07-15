@@ -37,7 +37,7 @@ These properties should pass in order to display the rows and columns of the tab
 | Name                    | Type          | Description                                                         |
 | :---                    |    :---       |       :-------------                                                |
 | tableHeaders            | array         | An array of objects that each describe a header column              |
-| tableColumns               | array         | An array of objects that each describe a row                     |
+| tableColumns            | array         | An array of objects that each describe a row                        |
 | isDataLoaded            | boolean       | Show the loader                                                     |
 | filterAvailability      | boolean       | Availability of Filter categories                                   |
 | filterSearchAvailability| boolean       | Availability Search option                                          |
@@ -50,9 +50,6 @@ These properties should pass in order to display the rows and columns of the tab
 | currentPage             | number        |    Current page number                                              |
 | sortName_dsc            | boolean       |    Sort in descending order                                         |
 | sortName_asc            | boolean       |   Sort in ascending order                                           |
-| onEditClick             | array         |   Function used to edit data                                        |
-| onDeleteClick           | array         |   Function used to delete data                                      |
-| onViewClick             | array         |   Function used to view data                                        |
 | mainContainerPadding    | string        |   Assign the values to container padding                            |
 | searchBarColor          | string        |   Assign the color(Hex or name)                                     |
 | tableHeaderColor        | string        |   Assign the color(Hex or name)                                     |
@@ -61,5 +58,16 @@ These properties should pass in order to display the rows and columns of the tab
 | bodyFontSize            | string        |   Assign the size value (px)                                        |
 | headerTxtColor          | string        |   Assign the text color (Hex or name)                               |
 | bodyTxtColor            | string        |   Assign the text color (Hex or name)                               |
+| onEditClick             | function      |   Function used to edit data                                        |
+| onDeleteClick           | function      |   Function used to delete data                                      |
+| onViewClick             | function      |   Function used to view data                                        |
+| onShowFilter            | function      |   Function used to open the filter box                              |
+| tagPressed              | function      |   Function used to select tags in the filter                        |
+| onSearch                | function      |   Function used to search the items in the table                    |
+| itemSort                | function      |   Function used to sort the items in the table                      |
+| onChangeAccepting       | function      |   Function used to accept switch changes                            |
+| onChangeAutoAccepting   | function      |   Function used to accept auto changes                              |
+| checkboxSelector        | function      |   Function used to get all checkboxes selected                      |
+| selectItem              | function      |   Function used to get a checkbox that selected                     |
 
  

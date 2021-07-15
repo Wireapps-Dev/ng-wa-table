@@ -44,20 +44,20 @@ export class AppComponent {
 
 
   filterTags = [
-    { id: 1, title: "Tag One" }, { id: 1, title: "Tag Two" }
+    { id: 1, title: "Fried Rice" }, { id: 1, title: "Dessert" }
   ]
 
   items = [
     {
       "id": 300001,
-      "title": "Chicken Korma / Parotta (2)",
+      "title": "Chicken Fried Rice",
       "image_url": "https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg",
       "status": 1,
       "sku": "00123",
       "categoryList": [
         {
           "id": 200003,
-          "title": "Mains",
+          "title": "Fried Rice",
         }
       ],
       "is_modifier": false,
@@ -65,14 +65,14 @@ export class AppComponent {
 
     {
       "id": 300002,
-      "title": "Chicken Korma / Parotta (2)",
+      "title": "Vanilla Ice Cream",
       "image_url": "https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg",
       "status": 1,
       "sku": "00124",
       "categoryList": [
         {
           "id": 200003,
-          "title": "Mains",
+          "title": "Dessert",
         }
       ],
       "is_modifier": false,
@@ -80,14 +80,14 @@ export class AppComponent {
 
     {
       "id": 300003,
-      "title": "Chicken Korma / Parotta (2)",
+      "title": "Egg Fried Rice",
       "image_url": "https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg",
       "status": 1,
       "sku": "00124",
       "categoryList": [
         {
           "id": 200003,
-          "title": "Mains",
+          "title": "Fried Rice",
         },
         {
           "id": 200004,

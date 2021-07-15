@@ -42,15 +42,12 @@ export class NgWaTableComponent implements OnInit {
   @Output() onDeleteClick = new EventEmitter<any>();
   @Output() onViewClick = new EventEmitter<any>();
   @Output() getMoreItems = new EventEmitter<any>();
-  @Output() refreshFilters = new EventEmitter<any>();
   @Output() showFilter = new EventEmitter<any>();
   @Output() tagPressed = new EventEmitter<any>();
-  @Output() onStateChange = new EventEmitter<any>();
   @Output() search = new EventEmitter<any>();
   @Output() itemSort = new EventEmitter<any>();
   @Output() onChangeAccepting = new EventEmitter<{int:any, e:any}>();
   @Output() onChangeAutoAccepting = new EventEmitter<{int:any, e:any}>();
-  @Output() open = new EventEmitter<{text:any ,id:any}>();
   @Output() checkboxSelector = new EventEmitter<any>();
   @Output() selectItem = new EventEmitter<{item: any, event: any}>();
   
@@ -86,10 +83,6 @@ export class NgWaTableComponent implements OnInit {
   getPages(pageNumber: any){
     console.log(pageNumber)
     this.getMoreItems.emit(pageNumber)
-  }
-
-  onRefreshFilters(){
-    this.refreshFilters.emit()
   }
 
   onShowFilter(){
