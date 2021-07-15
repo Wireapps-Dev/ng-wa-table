@@ -2,12 +2,12 @@
 
 The NGWaTable is an command-line tool and powerful library to create unique and basic table using Angular. The goal is to avoid code duplication while keeping the table flexible enough to handle different types of data.
 ---
-### Features**
+### Features
 ---
 
 - Background styling in the headers,search and filters
 - Text alignment in headers and columns(top, right, bottom, left)
-- Main container Padding (left, right, )
+- Style changes(text color, background color, padding)
 - Filter Options
 - Table Search bar
 - Table data Sorting
@@ -35,44 +35,31 @@ Import the NgWaTableModule into your app.module.ts file. Then use the bellow cod
 These properties should pass in order to display the rows and columns of the table,
 
 | Name                    | Type          | Description                                                         |
-
 | :---                    |    :---       |       :-------------                                                |
-
-| tableHeaders             | array         | An array of objects that each describe a header column              |
-
-| tableColumns               | array         | An array of objects that each describe a row                        |
-
+| tableHeaders            | array         | An array of objects that each describe a header column              |
+| tableColumns               | array         | An array of objects that each describe a row                     |
 | isDataLoaded            | boolean       | Show the loader                                                     |
-
 | filterAvailability      | boolean       | Availability of Filter categories                                   |
-
 | filterSearchAvailability| boolean       | Availability Search option                                          |
-
 | noItemsAvailable        | string        |     Show message when no item is available in the table             |
-
 | isFilterClicked         | boolean       |         Check filter is selected                                    |
-
 | filterClickHeight       | number        |         If filter is selected define table height                   |
-
 | filterNotClickHeight    | number        |    If filter is not selected define table height                    |
-
 | pages                   | array         |    Enable pagination                                                |
-
 | getMoreItems            | function      |    Function used to load items per page that should be visible      |
-
 | currentPage             | number        |    Current page number                                              |
-
 | sortName_dsc            | boolean       |    Sort in descending order                                         |
-
 | sortName_asc            | boolean       |   Sort in ascending order                                           |
-
 | onEditClick             | array         |   Function used to edit data                                        |
-
 | onDeleteClick           | array         |   Function used to delete data                                      |
-
 | onViewClick             | array         |   Function used to view data                                        |
-
-| mainContainerPadding    | string         |   Assign the values to container padding                           |
-| mainContainerPadding    | string         |   Assign the values to container padding                           |
+| mainContainerPadding    | string        |   Assign the values to container padding                            |
+| searchBarColor          | string        |   Assign the color(Hex or name)                                     |
+| tableHeaderColor        | string        |   Assign the color(Hex or name)                                     |
+| headerFontSize          | string        |   Assign the size value                                             |
+| headerFontSize          | string        |   Assign the size value (px)                                        |
+| bodyFontSize            | string        |   Assign the size value (px)                                        |
+| headerTxtColor          | string        |   Assign the text color (Hex or name)                               |
+| bodyTxtColor            | string        |   Assign the text color (Hex or name)                               |
 
  

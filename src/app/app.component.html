@@ -1,8 +1,8 @@
 <ng-wa-table [isDataLoaded]="isDataLoaded" [tableColumns]="tableInfo" [tableData]="items" [tableHeight]="48"
     [tableHeaders]="tableConfig" [noItemsAvailable]="noItemsAvailable"
     [filterSearchAvailability]="filterSearchAvailability" [filterAvailability]="filterAvailability"
-    [mainContainerPadding]="'0 10% 0 10%'" [headerFontSize]="'30px'" [bodyFontSize]="'14px'"
-    [searchBarColor]="'#ECF3FF'" [tableHeaderColor]="'#ECF3FF'" (onEditClick)="onEditClick($event)"
+    [mainContainerPadding]="'0 10% 0 10%'" [headerFontSize]="'14px'" [bodyFontSize]="'14px'" [bodyTxtColor]="'black'"
+    [searchBarColor]="'#ECF3FF'" [tableHeaderColor]="'#ECF3FF'" [headerTxtColor]="'black'" (onEditClick)="onEditClick($event)"
     (onDeleteClick)="onDeleteClick($event)" [sortName_asc]="sortItemName_asc" [sortName_dsc]='sortItemName_dsc'
     (itemSort)="itemNameSort()" (search)="searchItems($event)" [filterTags]="filterTags" 
     [tagActive]="tagActive" (tagPressed)="tagPressed($event)"

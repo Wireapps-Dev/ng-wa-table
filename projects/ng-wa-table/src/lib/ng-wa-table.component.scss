@@ -1,8 +1,8 @@
 .mainContainer {
     margin: 0px;
-    padding: var(--mainContainerPadding);
+    padding: var(--main-container-padding);
     font-family: "Overpass";
-    font-size: var(--headerFontSize);
+    font-size: var(--header-font-size);
 }
 
 .filterContainer {
@@ -108,14 +108,17 @@ table.dataTable tfoot th {
 
 .tableColumnData-left {
     font-size: var(--bodyFontSize);
+    color: var(--body-txt-color);
     text-align: left;
 }
 .tableColumnData-center {
     font-size: var(--bodyFontSize);
+    color: var(--body-txt-color);
     text-align: center;
 }
 .tableColumnData-right {
     font-size: var(--bodyFontSize);
+    color: var(--body-txt-color);
     text-align: right;
 }
 
@@ -182,8 +185,10 @@ table.dataTable tfoot th {
 .table-responsive thead th {
     position: sticky !important;
     top: 0 !important;
-    background-color: var(--tableHeaderColor);
+    background-color: var(--table-header-color);
     z-index: 1;
+    font-size: var(--header-font-size);
+    color: var(--header-txt-color);
 }
 
 .actions {
@@ -257,7 +262,7 @@ li.disabled {
 //search
 .search-filter {
     // background-color: #ECF3FF ;
-    background-color: var(--searchBarColor);
+    background-color: var(--search-bar-color);
     border: none;
     padding: 10px;
 }

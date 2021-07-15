@@ -1,4 +1,4 @@
-<div class="mainContainer" [style.--mainContainerPadding]="mainContainerPadding">
+<div class="mainContainer" [style.--main-container-padding]="mainContainerPadding">
   <div class="tab-content">
     <div class="" style="padding-top: 20px">
       <div class="card col-md-12">
@@ -18,7 +18,7 @@
             <div *ngIf="filterSearchAvailability" class="mr-auto p-2 col-sm-6  has-search">
               <div class="form-control-feedback ">
                 <i class="fas fa-search"></i>
-                <input class="form-control search-filter" [style.--searchBarColor]="searchBarColor" type="text"
+                <input class="form-control search-filter" [style.--search-bar-color]="searchBarColor" type="text"
                   placeholder="Search" (keyup)="onSearch($event)">
 
               </div>
@@ -65,8 +65,8 @@
               <thead style="border-spacing: 0px !important;">
                 <tr>
                   <!-- Table Heading -->
-                  <th scope="col" *ngFor="let field of tableHeaders" [style.--tableHeaderColor]="tableHeaderColor"
-                    [style.--fontSize]="headerFontSize" [ngClass]="field.classType ">{{field.header}}
+                  <th scope="col" *ngFor="let field of tableHeaders" [style.--table-header-color]="tableHeaderColor"
+                    [style.--header-font-size]="headerFontSize" [style.--header-txt-color]="headerTxtColor" [ngClass]="field.classType ">{{field.header}}
 
                     <div *ngIf="field.header == 'POS Actions'" style="display: inline;">
                       <img src="./../assets/icons/help.png" id="navitem" width="16px" height="16px" alt=""
@@ -130,7 +130,7 @@
                   <tr *ngFor="let data of tableData let idx = index">
 
                     <td scope="row" *ngFor="let key of tableColumns" [ngClass]='key.classType' class="tableData"
-                      [style.--bodyFontSize]="bodyFontSize">
+                      [style.--bodyFontSize]="bodyFontSize" [style.--body-txt-color]="bodyTxtColor">
 
                       <ng-container *ngIf="key.type == 'String'">
                         {{data[key.header]}}

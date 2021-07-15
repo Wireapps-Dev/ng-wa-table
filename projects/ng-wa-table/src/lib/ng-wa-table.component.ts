@@ -35,6 +35,8 @@ export class NgWaTableComponent implements OnInit {
   @Input() mainContainerPadding : any;
   @Input() headerFontSize : any;
   @Input() bodyFontSize : any;
+  @Input() headerTxtColor : any;
+  @Input() bodyTxtColor : any;
   
   @Output() onEditClick = new EventEmitter<any>();
   @Output() onDeleteClick = new EventEmitter<any>();
