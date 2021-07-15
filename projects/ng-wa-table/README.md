@@ -1,5 +1,4 @@
 # NgWaTable
----
 
 The NGWaTable is an command-line tool and powerful library to create unique and basic table using Angular. The goal is to avoid code duplication while keeping the table flexible enough to handle different types of data.
 
