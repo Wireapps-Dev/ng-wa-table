@@ -72,5 +72,5 @@ These properties should pass in order to display the rows and columns of the tab
 
 ## License
 
-[MIT](LICENSE)
+[MIT](../LICENSE)
  
