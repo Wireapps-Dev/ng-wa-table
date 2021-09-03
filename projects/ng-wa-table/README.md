@@ -71,4 +71,7 @@ These properties should pass in order to display the rows and columns of the tab
 | checkboxSelector        | function      |   Function used to get all checkboxes selected                      |
 | selectItem              | function      |   Function used to get a checkbox that selected                     |
 
+## License
+
+[MIT](../../LICENSE)
  
