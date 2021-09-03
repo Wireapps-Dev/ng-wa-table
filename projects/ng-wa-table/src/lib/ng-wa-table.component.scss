@@ -34,7 +34,7 @@
 }
 
 .tags-filter-button-active {
-    background-color: #6dc4eb;
+    background-color: #24556b;
     border-radius: 20px;
     height: 32px;
     border: solid #6dc4eb;
@@ -59,10 +59,10 @@
     cursor: pointer;
 }
 .tags-filter-all-button-active {
-    background-color: #6dc4eb;
+    background-color: #2d5697;
     border-radius: 20px;
     height: 32px;
-    border: solid #6dc4eb;
+    border: solid #2d5697;
     border-width: 0.5px;
     outline: none;
     color: #ffffff;
@@ -264,9 +264,12 @@ li.disabled {
 .search-filter {
     // background-color: #ECF3FF ;
     background-color: var(--search-bar-color);
+   color: var(--search-bar-txt-color);
     border: none;
     padding: 10px;
 }
+
+  
 .has-search .form-control {
     padding-left: 62px;
 }
@@ -277,20 +280,23 @@ li.disabled {
     width: 20px;
     display: flex;
     justify-content: center;
-    color: #2d5697;
+    color: var(--search-bar-txt-color);
 }
 ::placeholder {
-    color: #2d5697;
+    color: var(--search-bar-txt-color);
+    border: none;
     opacity: 1; /* Firefox */
 }
 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: #2d5697;
+    color: var(--search-bar-txt-color);
+    border: none;
 }
 
 ::-ms-input-placeholder {
     /* Microsoft Edge */
-    color: #2d5697;
+    color: var(--search-bar-txt-color);
+    border: none;
 }
 
 .btn-filter {

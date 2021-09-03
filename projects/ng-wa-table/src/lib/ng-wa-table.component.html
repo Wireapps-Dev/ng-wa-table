@@ -17,8 +17,8 @@
             <!-- Search Input -->
             <div *ngIf="filterSearchAvailability" class="mr-auto p-2 col-sm-6  has-search">
               <div class="form-control-feedback ">
-                <i class="fas fa-search"></i>
-                <input class="form-control search-filter" [style.--search-bar-color]="searchBarColor" type="text"
+                <i class="fas fa-search" [style.--search-bar-txt-color]="searchBarTxtColor" ></i>
+                <input class="form-control search-filter" [style.--search-bar-color]="searchBarColor" [style.--search-bar-txt-color]="searchBarTxtColor" type="text"
                   placeholder="Search" (keyup)="onSearch($event)">
 
               </div>

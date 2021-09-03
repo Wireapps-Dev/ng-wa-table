@@ -58,6 +58,7 @@ These properties should pass in order to display the rows and columns of the tab
 | bodyFontSize            | string        |   Assign the size value (px)                                        |
 | headerTxtColor          | string        |   Assign the text color (Hex or name)                               |
 | bodyTxtColor            | string        |   Assign the text color (Hex or name)                               |
+| searchBarTxtColor       | string        |   Assign the text color (Hex or name)                               |
 | onEditClick             | function      |   Function used to edit data                                        |
 | onDeleteClick           | function      |   Function used to delete data                                      |
 | onViewClick             | function      |   Function used to view data                                        |
