@@ -1,9 +1,12 @@
+[![NPM](https://img.shields.io/npm/v/react-native-check-version.svg?style=flat)](https://www.npmjs.com/package/ng-wa-table)
+[![GitHub license](https://img.shields.io/github/license/includable/react-native-check-version.svg)](https://github.com/Wireapps-Dev/ng-wa-table/blob/main/LICENSE)
+
 # NgWaTable
 
 The NgWaTable is a powerful library to create unique and basic table using Angular. The goal is to avoid code duplication while keeping the table flexible enough to handle different types of data. Basically, create a custom table as bellow, 
 
 <p align="center">
-<img src="/.github/images/example-modal.gif" height="500" />
+<img src="/src/assets/table_view.png" height="50%" width="100%" />
 </p>
 
 ### Features
