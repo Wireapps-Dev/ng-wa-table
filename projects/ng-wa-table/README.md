@@ -25,7 +25,7 @@ npm install ng-wa-table
 ---
 Import the NgWaTableModule into your app.module.ts file. Then use the bellow code into your component.html file.
 
-```code
+```javascript
 <ng-wa-table  [isDataLoaded]="isDataLoaded" [tableColumns]="tableInfo" [tableData]="items"  [filterClickTableHeight]="48"  [filterClickTableHeight]="65" [tableHeaders]="tableConfig" [noItemsAvailable]="noItemsAvailable" [filterSearchAvailability]="filterSearchAvailability" [filterAvailability]="filterAvailability" [mainContainerPadding]="'0 10% 0 10%'" [headerFontSize]="'30px'" [bodyFontSize]="'14px'" [searchBarColor]="'#ECF3FF'" [tableHeaderColor]="'#ECF3FF'" (onEditClick)="onEditClick($event)" (onDeleteClick)="onDeleteClick($event)" [sortName_asc]="sortItemName_asc" [sortName_dsc]='sortItemName_dsc'(itemSort)="itemNameSort()"></ng-wa-table>
 
 ```
