@@ -9,8 +9,7 @@ The NgWaTable is a powerful library to create unique and basic table using Angul
 <img src="/src/assets/table_view.png" height="50%" width="100%" />
 </p>
 
-### Features
----
+## Features
 
 - Background styling in the headers,search and filters
 - Text alignment in headers and columns(top, right, bottom, left)
@@ -20,16 +19,16 @@ The NgWaTable is a powerful library to create unique and basic table using Angul
 - Table data Sorting
 - Table data Loader through ``ngx-skeleton-loader``
 
-### Installation
----
+## Installation
+
 ```js
 
 npm install ng-wa-table
 
 ```
 
-### How To Use
----
+## How To Use
+
 Import the NgWaTableModule into your app.module.ts file. Then use the bellow code into your component.html file.
 
 ```js
@@ -44,8 +43,8 @@ Import the NgWaTableModule into your app.module.ts file. Then use the bellow cod
 
 ```
 
-#### Props
----
+## Available Props
+
 These properties should pass in order to display the rows and columns of the table,
 
 | Name                    | Type          | Description                                                         |
