@@ -1,4 +1,4 @@
-[![NPM](https://img.shields.io/npm/v/react-native-check-version.svg?style=flat)](https://www.npmjs.com/package/ng-wa-table)
+[![NPM](https://badge.fury.io/js/ng-wa-table.svg)](https://www.npmjs.com/package/ng-wa-table)
 [![GitHub license](https://img.shields.io/github/license/includable/react-native-check-version.svg)](https://github.com/Wireapps-Dev/ng-wa-table/blob/main/LICENSE)
 
 # NgWaTable
