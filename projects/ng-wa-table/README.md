@@ -6,7 +6,7 @@
 The NgWaTable is a powerful library to create unique and basic table using Angular. The goal is to avoid code duplication while keeping the table flexible enough to handle different types of data. Basically, create a custom table as bellow, 
 
 <p align="center">
-<img src="/src/assets/table_view.png" height="50%" width="100%" />
+<img src="https://github.com/Wireapps-Dev/ng-wa-table/blob/main/src/assets/table_view.png" height="50%" width="100%" />
 </p>
 
 ## Features
