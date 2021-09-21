@@ -73,5 +73,5 @@ These properties should pass in order to display the rows and columns of the tab
 
 ## License
 
-[MIT](../../LICENSE)
+[MIT](https://github.com/Wireapps-Dev/ng-wa-table/blob/d6c2d193120dc3387b91dc745d8f1dee94ace4af/LICENSE)
  
