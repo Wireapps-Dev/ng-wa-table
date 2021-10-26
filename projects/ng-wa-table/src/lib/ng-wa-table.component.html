@@ -1,7 +1,7 @@
 <div class="mainContainer" [style.--main-container-padding]="mainContainerPadding">
   <div class="tab-content">
-    <div class="" style="padding-top: 20px">
-      <div class="card col-md-12">
+    <div class="card" style="padding-top: 20px">
+      <!-- <div class="card "> -->
         <!-- Filters -->
         <div class="row filterContainer">
           <div class="col-md-12 filter-btn d-flex align-content-center"
@@ -16,10 +16,9 @@
             </div>
             <!-- Search Input -->
             <div *ngIf="filterSearchAvailability" class="mr-auto p-2 col-sm-6  has-search">
-              <div class="form-control-feedback ">
+              <div class="searchContainer" style="display: flex; justify-content: center; align-items: center;" [style.--search-bar-color]="searchBarColor" [style.--search-bar-txt-color]="searchBarTxtColor">
                 <i class="fas fa-search" [style.--search-bar-txt-color]="searchBarTxtColor" ></i>
-                <input class="form-control search-filter" [style.--search-bar-color]="searchBarColor" [style.--search-bar-txt-color]="searchBarTxtColor" type="text"
-                  placeholder="Search" (keyup)="onSearch($event)">
+                <input class="form-control search-filter" [style.--search-bar-color]="searchBarColor" [style.--search-bar-txt-color]="searchBarTxtColor" type="text" placeholder="Search" (keyup)="onSearch($event)"/>
 
               </div>
             </div>
@@ -59,7 +58,7 @@
         </div>
         <!-- table -->
         <div class="row">
-          <div class="col-md-12 table-responsive" [style.height.vh]="tableHeight" style="padding: 0; margin: 0; ">
+          <div class="col-md-12 table-responsive" [style.height.vh]="tableHeight" >
             <table class="table customerTable" style="border-spacing: 0px !important;">
               <thead style="border-spacing: 0px !important;">
                 <tr>
@@ -163,10 +162,10 @@
                       </ng-container>
                       <ng-container *ngIf="key.header == 'action'">
                         <div class="actions-set">
-                          <a class=" btnAction">
+                          <a class=" btnAction" [style.--gap-between-actions]="gapBetweenActions">
                             <i class="fas fa-pen" (click)="onClickAction('Edit', data)"></i>
                           </a>
-                          <a class=" btnAction">
+                          <a class=" btnAction" >
                             <i class="fas fa-trash" (click)="onClickAction('Delete', data)"></i>
                           </a>
                         </div>
@@ -230,7 +229,7 @@
             </div>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 </div>

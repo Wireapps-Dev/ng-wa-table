@@ -124,7 +124,7 @@ table.dataTable tfoot th {
 
 .table-responsive {
     overflow-y: auto !important;
-    padding: 10px;
+    // padding: 10px;
     height: 70vh;
     margin-top: 15px;
 }
@@ -197,11 +197,12 @@ table.dataTable tfoot th {
 
 .actions-set {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     text-align: center;
 }
 
 .btnAction {
+    padding-right: var(--gap-between-actions);
     cursor: pointer;
     color: black;
 }
@@ -262,31 +263,49 @@ li.disabled {
 
 //search
 .search-filter {
-    // background-color: #ECF3FF ;
     background-color: var(--search-bar-color);
-   color: var(--search-bar-txt-color);
+    color: var(--search-bar-txt-color);
     border: none;
-    padding: 10px;
+    padding: 9px;
+}
+.searchContainer {
+    background-color: var(--search-bar-color);
+    color: var(--search-bar-txt-color);
+    border: none;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-radius: .25rem;
 }
 
   
 .has-search .form-control {
-    padding-left: 62px;
+    padding-left: 18px;
 }
-.has-search .form-control-feedback i {
-    position: absolute;
-    top: 34%;
-    left: 5%;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    color: var(--search-bar-txt-color);
+// .has-search .form-control-feedback i {
+//     position: absolute;
+//     top: 34%;
+//     left: 5%;
+//     width: 20px;
+//     display: flex;
+//     justify-content: center;
+//     color: var(--search-bar-txt-color);
+// }
+input:focus, input.form-control:focus {
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
 ::placeholder {
     color: var(--search-bar-txt-color);
     border: none;
-    opacity: 1; /* Firefox */
+    
+    // opacity: 1; /* Firefox */
 }
+
+
 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     color: var(--search-bar-txt-color);

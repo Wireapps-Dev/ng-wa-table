@@ -38,6 +38,7 @@ export class NgWaTableComponent implements OnInit {
   @Input() headerTxtColor : any;
   @Input() bodyTxtColor : any;
   @Input() searchBarTxtColor : any;
+  @Input() gapBetweenActions : any;
   
   @Output() onEditClick = new EventEmitter<any>();
   @Output() onDeleteClick = new EventEmitter<any>();
@@ -45,7 +46,7 @@ export class NgWaTableComponent implements OnInit {
   @Output() getMoreItems = new EventEmitter<any>();
   @Output() showFilter = new EventEmitter<any>();
   @Output() tagPressed = new EventEmitter<any>();
-  @Output() search = new EventEmitter<any>();
+  @Output() search = new EventEmitter<any>(); 
   @Output() itemSort = new EventEmitter<any>();
   @Output() onChangeAccepting = new EventEmitter<{int:any, e:any}>();
   @Output() onChangeAutoAccepting = new EventEmitter<{int:any, e:any}>();
