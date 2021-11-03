@@ -1,244 +1,259 @@
 <div class="mainContainer" [style.--main-container-padding]="mainContainerPadding">
   <div class="tab-content">
-    <div class="card" style="padding-top: 20px">
+    <div class="card" style="padding-top: 20px"  [style.--table-header-color]="tableHeaderColor">
       <!-- <div class="card "> -->
-        <!-- Filters -->
-        <div class="row filterContainer">
-          <div class="col-md-12 filter-btn d-flex align-content-center"
-            [style.padding.px]="!filterSearchAvailability ? '0' : ''">
-            <!-- Filter button -->
-            <div *ngIf="filterAvailability" class=" p-2">
-              <button type="button" class="btn-filter" data-toggle="collapse" data-target="#filterCollapse"
-                aria-expanded="false" aria-controls="collapseExample" (click)=onShowFilter()>
-                <i class="fas fa-filter"></i>
-                Filters
-              </button>
-            </div>
-            <!-- Search Input -->
-            <div *ngIf="filterSearchAvailability" class="mr-auto p-2 col-sm-6  has-search">
-              <div class="searchContainer" style="display: flex; justify-content: center; align-items: center;" [style.--search-bar-color]="searchBarColor" [style.--search-bar-txt-color]="searchBarTxtColor">
-                <i class="fas fa-search" [style.--search-bar-txt-color]="searchBarTxtColor" ></i>
-                <input class="form-control search-filter" [style.--search-bar-color]="searchBarColor" [style.--search-bar-txt-color]="searchBarTxtColor" type="text" placeholder="Search" (keyup)="onSearch($event)"/>
+      <!-- Filters -->
+      <div class="row filterContainer">
+        <div class="col-md-12 filter-btn d-flex align-content-center"
+          [style.padding.px]="!filterSearchAvailability ? '0' : ''">
+          <!-- Filter button -->
+          <div *ngIf="filterAvailability" class=" p-2">
+            <button type="button" class="btn-filter" data-bs-toggle="collapse" data-bs-target="#filterCollapse"
+              aria-expanded="false" aria-controls="collapseExample" (click)=onShowFilter()
+              [style.--filter-txt-color]="filterTextColor">
+              <i class="fas fa-filter" [style.--filter-icon-color]="filterIconColor"></i>
+              Filters
+            </button>
+          </div>
+          <!-- Search Input -->
+          <div *ngIf="filterSearchAvailability" class="mr-auto p-2 col-sm-6  has-search">
+            <div class="searchContainer" style="display: flex; justify-content: center; align-items: center;"
+              [style.--search-bar-color]="searchBarColor" [style.--search-bar-txt-color]="searchBarTxtColor">
+              <i class="fas fa-search" [style.--search-bar-icon-color]="searchIconColor"></i>
+              <input class="form-control search-filter" [style.--search-bar-color]="searchBarColor"
+                [style.--search-bar-txt-color]="searchBarTxtColor"
+                [style.--search-placeholder-color]="searchPlaceholderColor" type="text" placeholder="Search"
+                (keyup)="onSearch($event.target.value)" />
 
-              </div>
             </div>
           </div>
-          <!-- Filter Options -->
-          <div *ngIf="filterAvailability" class="collapse" id="filterCollapse">
-            <div class="">
-              <div class="tableFilterBox col-md-12" style="overflow: hidden; margin: 0 0 10px 8px;">
-                <label class="filterLbl" for="menuName">Filters</label>
-                <div class="row filtersRow">
-                  <div class="col-md-12 filterComponent">
+        </div>
     
-                    <diV class="row second-row-filter">
-                      <div class="scrolling-wrapper">
-                        <div class="card">
-                          <button
-                            [ngClass]="tagActive === 0  ? 'tags-filter-all-button-active' : 'tags-filter-all-button-inactive'"
-                            (click)="onTagPressed(0)">
-                            All
-                          </button>
-                        </div>
-    
-                        <div class="card" *ngFor="let tag of filterTags">
-                          <button
-                            [ngClass]="tagActive === tag.id  ? 'tags-filter-button-active' : 'tags-filter-button-inactive'"
-                            (click)="onTagPressed(tag.id)">
-                            {{tag.title}}
-                          </button>
-                        </div>
+        <!-- Filter Options -->
+        <div *ngIf="filterAvailability" class="collapse" id="filterCollapse" aria-labelledby="collapseExample">
+          <div class="">
+            <div class="tableFilterBox col-md-12" style="overflow: hidden; margin: 8px 0 10px 8px; width: 98%;">
+              <label class="filterLbl" for="menuName">Filters</label>
+              <div class="row filtersRow">
+                <div class="col-md-12 filterComponent">
+
+                  <diV class="row second-row-filter">
+                    <div class="scrolling-wrapper">
+                      <div class="card">
+                        <button [style.--table-header-color]="tableHeaderColor" [style.--header-txt-color]="headerTxtColor"
+                          [ngClass]="tagActive == 'All'  ? 'tags-filter-all-button-active' : 'tags-filter-all-button-inactive'"
+                          (click)="onTagPressed('All')">
+                          All
+                        </button>
                       </div>
-                    </diV>
-                  </div>
+
+                      <div class="card" *ngFor="let tag of filterTags">
+                        <button [style.--table-header-color]="tableHeaderColor" [style.--header-txt-color]="headerTxtColor"
+                          [ngClass]="tagActive == tag  ? 'tags-filter-button-active' : 'tags-filter-button-inactive'"
+                          (click)="onTagPressed(tag)">
+                          {{tag}}
+                        </button>
+                      </div>
+                    </div>
+                  </diV>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- table -->
-        <div class="row">
-          <div class="col-md-12 table-responsive" [style.height.vh]="tableHeight" >
-            <table class="table customerTable" style="border-spacing: 0px !important;">
-              <thead style="border-spacing: 0px !important;">
-                <tr>
-                  <!-- Table Heading -->
-                  <th scope="col" *ngFor="let field of tableHeaders" [style.--table-header-color]="tableHeaderColor"
-                    [style.--header-font-size]="headerFontSize" [style.--header-txt-color]="headerTxtColor" [ngClass]="field.classType ">{{field.header}}
+      </div>
+      <!-- table -->
+      <div class="row">
+        <div class="col-md-12 table-responsive" [style.height.vh]="tableHeight">
+          <table class="table customerTable" style="border-spacing: 0px !important;">
+            <thead style="border-spacing: 0px !important;">
+              <tr>
+                <!-- Table Heading -->
+                <th scope="col" *ngFor="let field of tableHeaders" [style.--table-header-color]="tableHeaderColor"
+                  [style.--header-font-size]="headerFontSize" [style.--header-txt-color]="headerTxtColor"
+                  [ngClass]="field.classType ">{{field.header}}
 
-                    <div *ngIf="field.header == 'POS Actions'" style="display: inline;">
-                      <img src="./../assets/icons/help.png" id="navitem" width="16px" height="16px" alt=""
-                        loading="lazy" style="margin: 0px 5px ;" data-toggle="tooltip" title="You sync items with POS">
-                    </div>
-                    <div *ngIf="field.checkbox" class="custom-control custom-checkbox" id="checkbox" appTableAction
-                      [policies]="policies">
-                      <input type="checkbox" class="custom-control-input itemCheck" [checked]="isAllSelected"
-                        id="allCheck" (click)="selectAll()">
-                      <label class="custom-control-label lblCheckbox" id="labelCheckbox" for="allCheck"></label>
-                    </div>
-                    <div *ngIf="field.sort" (click)="onItemSort()">
-                      <div *ngIf="tableData.length!=0 && isDataLoaded" style="display: flex;
+                  <div *ngIf="field.header == 'POS Actions'" style="display: inline;">
+                    <img src="./../assets/icons/help.png" id="navitem" width="16px" height="16px" alt="" loading="lazy"
+                      style="margin: 0px 5px ;" data-toggle="tooltip" title="You sync items with POS">
+                  </div>
+                  <div *ngIf="field.checkbox" class="custom-control custom-checkbox" id="checkbox" appTableAction
+                    [policies]="policies">
+                    <input type="checkbox" class="custom-control-input itemCheck" [checked]="isAllSelected"
+                      id="allCheck" (click)="selectAll()">
+                    <label class="custom-control-label lblCheckbox" id="labelCheckbox" for="allCheck"></label>
+                  </div>
+                  <div *ngIf="field.sort" (click)="onItemSort()">
+                    <div *ngIf="tableData.length!=0 && isDataLoaded" style="display: flex;
                           position: absolute;
                           top: 0;
                           right: 68px;
                           flex-direction: column;">
-                        <span style="padding-left: 10px;">
-                          <i class="fal fa-sort-up"></i>
+                      <span style="padding-left: 10px;">
+                        <i class="fal fa-sort-up"></i>
 
-                        </span>
-                        <span *ngIf="!sortName_dsc || !sortName_asc" style="padding-left: 10px;">
-                          <i class="fal fa-sort-down"></i>
+                      </span>
+                      <span *ngIf="!sortName_dsc || !sortName_asc" style="padding-left: 10px;">
+                        <i class="fal fa-sort-down"></i>
 
-                        </span>
-                      </div>
-                      <span *ngIf="sortName_asc" style="display: flex;
+                      </span>
+                    </div>
+                    <span *ngIf="sortName_asc" style="display: flex;
                         position: absolute;
                         top: 2px;
                         right: 68px;
                         flex-direction: column;">
-                        <i class="fas fa-sort-up"></i>
-                      </span>
-                      <span *ngIf="!sortName_asc && sortName_dsc" style="display: flex;
+                      <i class="fas fa-sort-up"></i>
+                    </span>
+                    <span *ngIf="!sortName_asc && sortName_dsc" style="display: flex;
                         position: absolute;
-                        bottom: 6px;
+                        bottom: -1px;
                         right: 68px;
                         flex-direction: column;">
-                        <i class="fas fa-sort-down"></i>
-                      </span>
-                    </div>
-                    <div *ngIf=" field.type === 'Action'" [ngClass]="field.classType">
-                      Actions
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Loader -->
-                <tr *ngIf="!isDataLoaded">
-                  <td colspan="12">
-                    <ngx-skeleton-loader class="skelton-tiles" count="4" [theme]="{ 
+                      <i class="fas fa-sort-down"></i>
+                    </span>
+                  </div>
+                  <div *ngIf=" field.type === 'Action'" [ngClass]="field.classType">
+                    Actions
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Loader -->
+              <tr *ngIf="!isDataLoaded">
+                <td colspan="12">
+                  <ngx-skeleton-loader class="skelton-tiles" count="4" [theme]="{ 
                           'border-radius': '0px',
                           height: '50px',
                           width:'25%'
                         }">
-                    </ngx-skeleton-loader>
+                  </ngx-skeleton-loader>
+                </td>
+              </tr>
+              <ng-container *ngIf="isDataLoaded && tableData.length !=0; else elseBlock">
+                <tr *ngFor="let data of tableData let idx = index" [style.--table-header-color]="tableHeaderColor">
+
+                  <td scope="row" *ngFor="let key of tableColumns" [ngClass]='key.classType' class="tableData"
+                    [style.--bodyFontSize]="bodyFontSize" [style.--body-txt-color]="bodyTxtColor">
+
+                    <ng-container *ngIf="key.type == 'String'">
+                      {{data[key.header]}}
+                    </ng-container>
+                    <!-- checkbox -->
+                    <ng-container *ngIf="key.type == 'Checkbox'">
+                      <div class="custom-control custom-checkbox" id="checkbox" appTableAction [policies]="policies">
+
+                        <input type="checkbox" class="custom-control-input itemCheck"
+                          [checked]="(selectedItems.indexOf(data[key.header])) != -1" id="{{data[key.header]}}"
+                          (change)="onSelectItem(data, $event)">
+                        <label class="custom-control-label lblCheckbox" id="labelCheckbox"
+                          for="{{data[key.header]}}"></label>
+                      </div>
+                    </ng-container>
+                    <ng-container *ngIf="key.type == 'Image'">
+                      <img src="{{data[key.header]}}" id="navitem" width="36px" alt="" loading="lazy"
+                        routerLink="/profile">
+                    </ng-container>
+                    <ng-container *ngIf="key.type == 'Boolean'">
+                      {{key.check(data[key.header])}}
+
+                    </ng-container>
+                    <ng-container *ngIf="key.type == 'Array'">
+                      {{key.check(data[key.header])}}
+                    </ng-container>
+                    <ng-container *ngIf="key.type == 'Status'">
+                      <div [ngClass]="data[key.header] == 'Active' ? 'statusLableActive' : 'statusLableInActive' ">
+                        {{data[key.header]}}
+                      </div>
+                    </ng-container>
+                    <ng-container *ngIf="key.header == 'action'">
+                      <div class="actions-set">
+                        <a class=" btnAction" [style.--gap-between-actions]="gapBetweenActions">
+                          <i class="fas fa-pen" (click)="onClickAction('Edit', data)"></i>
+                        </a>
+                        <a class=" btnAction">
+                          <i class="fas fa-trash" (click)="onClickAction('Delete', data)"></i>
+                        </a>
+                      </div>
+                    </ng-container>
+                    <ng-container *ngIf="key.type == 'Switch'">
+                      <div class="switch">
+                        <ui-switch size="small" switchColor="white" color="#00c10b" [(ngModel)]="data[key.header]"
+                          [disabled]="!toggleAccess" (changeEvent)="onChangeAccept(key.header, data, data[key.header])"
+                          defaultBgColor="white" uncheckedLabel="Off" checkedLabel="On" checkedTextColor="white"
+                          defaultBoColor="#cccccc">
+                        </ui-switch>
+                      </div>
+                    </ng-container>
                   </td>
                 </tr>
-                <ng-container *ngIf="isDataLoaded && tableData.length !=0; else elseBlockUser">
-                  <tr *ngFor="let data of tableData let idx = index">
+              </ng-container>
+              <!-- No tableData -->
+              <ng-template #elseBlock>
+                <tr *ngIf="isDataLoaded" style="line-height: 60px;">
+                  <td style="text-align: center;" colspan="10">{{noItemsAvailable}}</td>
+                </tr>
+              </ng-template>
+            </tbody>
+          </table>
 
-                    <td scope="row" *ngFor="let key of tableColumns" [ngClass]='key.classType' class="tableData"
-                      [style.--bodyFontSize]="bodyFontSize" [style.--body-txt-color]="bodyTxtColor">
-
-                      <ng-container *ngIf="key.type == 'String'">
-                        {{data[key.header]}}
-                      </ng-container>
-                      <!-- checkbox -->
-                      <ng-container *ngIf="key.type == 'Checkbox'">
-                        <div class="custom-control custom-checkbox" id="checkbox" appTableAction [policies]="policies">
-
-                          <input type="checkbox" class="custom-control-input itemCheck"
-                            [checked]="(selectedItems.indexOf(data[key.header])) != -1" id="{{data[key.header]}}"
-                            (change)="onSelectItem(data, $event)">
-                          <label class="custom-control-label lblCheckbox" id="labelCheckbox"
-                            for="{{data[key.header]}}"></label>
-                        </div>
-                      </ng-container>
-                      <ng-container *ngIf="key.type == 'Image'">
-                        <img src="{{data[key.header]}}" id="navitem" width="36px" alt="" loading="lazy"
-                          routerLink="/profile">
-                      </ng-container>
-                      <ng-container *ngIf="key.type == 'Boolean'">
-                        {{key.check(data[key.header])}}
-
-                      </ng-container>
-                      <ng-container *ngIf="key.type == 'Array'">
-                        {{key.check(data[key.header])}}
-                      </ng-container>
-                      <ng-container *ngIf="key.type == 'Status'">
-                        <div [ngClass]="data[key.header] == 'Active' ? 'statusLableActive' : 'statusLableInActive' ">
-                          {{data[key.header]}}
-                        </div>
-                      </ng-container>
-                      <ng-container *ngIf="key.header == 'action'">
-                        <div class="actions-set">
-                          <a class=" btnAction" [style.--gap-between-actions]="gapBetweenActions">
-                            <i class="fas fa-pen" (click)="onClickAction('Edit', data)"></i>
-                          </a>
-                          <a class=" btnAction" >
-                            <i class="fas fa-trash" (click)="onClickAction('Delete', data)"></i>
-                          </a>
-                        </div>
-                      </ng-container>
-                      <ng-container *ngIf="key.type == 'Switch'">
-                        <div class="switch">
-                          <ui-switch size="small" switchColor="white" color="#00c10b" [(ngModel)]="data[key.header]"
-                            [disabled]="!toggleAccess"
-                            (changeEvent)="onChangeAccept(key.header, data, data[key.header])" defaultBgColor="white"
-                            uncheckedLabel="Off" checkedLabel="On" checkedTextColor="white" defaultBoColor="#cccccc">
-                          </ui-switch>
-                        </div>
-                      </ng-container>
-                    </td>
-                  </tr>
-                </ng-container>
-                <!-- No tableData -->
-                <ng-template #elseBlockUser>
-                  <tr *ngIf="isDataLoaded" style="line-height: 60px;">
-                    <td style="text-align: center;" colspan="10">{{noItemsAvailable}}</td>
-                  </tr>
-                </ng-template>
-              </tbody>
-            </table>
-
+        </div>
+        <!-- Pagination -->
+        <div class="paginationFooter col-md-12" *ngIf="pages && pages.length > 1">
+          <div class="pagination-left"></div>
+          <div class="pagination-text">
+            Rows per page: 10
           </div>
-          <!-- Pagination -->
-          <div class="paginationFooter col-md-12" *ngIf="pages && pages.length > 1">
-            <div class="pagination-left"></div>
-            <div class="pagination-text">
-              Rows per page: 10
-            </div>
-            <div class="pagination-dropdown pagination-text btn-group">
-              <a class="" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{currentPage}} of {{pages.length}}
-              </a>
-            </div>
+          <div class="pagination-dropdown pagination-text btn-group">
+            <a class="" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{currentPage}} of {{pages.length}}
+            </a>
+          </div>
 
-            <div *ngIf="pages" class="pagination-right">
-              <nav *ngIf="pages.length > 1" aria-label="Page navigation example">
+          <div *ngIf="pages" class="pagination-right">
+            <nav *ngIf="pages.length > 1" aria-label="Page navigation example">
 
-                <ul class="pagination justify-content-end">
-                  <li class="page-item" [class.disabled]="currentPage === 1 ? true : false"
-                    aria-disabled="currentPage === 1 ? true : false" style="padding-right: 10px;">
-                    <a class="page-link cursor" (click)="getPages(currentPage-1)">
-                      <img src="./assets/icons/arrow-left.png">
-                    </a>
-                  </li>
-                  <li *ngFor="let page of visiblePages "
-                    [ngClass]="page == currentPage ? 'page-item active' : 'page-item' ">
-                    <a class="page-link cursor" (click)="getPages(page)">{{page}}</a>
-                  </li>
-                  <li class="page-item" [class.disabled]="currentPage === pages.length ? true : false"
-                    aria-disabled="currentPage === pages.length ? true : false" style="padding-left: 10px;">
-                    <a class="page-link cursor" (click)="getPages(currentPage+1)">
-                      <img src="./assets/icons/arrow-right.png">
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+              <ul class="pagination justify-content-end">
+                <li class="page-item" [class.disabled]="currentPage === 1 ? true : false"
+                  aria-disabled="currentPage === 1 ? true : false" style="padding-right: 10px;">
+                  <a class="page-link cursor" (click)="getPages(currentPage-1)">
+                    <img src="./assets/icons/arrow-left.png">
+                  </a>
+                </li>
+                <li *ngFor="let page of visiblePages "
+                  [ngClass]="page == currentPage ? 'page-item active' : 'page-item' ">
+                  <a class="page-link cursor" (click)="getPages(page)">{{page}}</a>
+                </li>
+                <li class="page-item" [class.disabled]="currentPage === pages.length ? true : false"
+                  aria-disabled="currentPage === pages.length ? true : false" style="padding-left: 10px;">
+                  <a class="page-link cursor" (click)="getPages(currentPage+1)">
+                    <img src="./assets/icons/arrow-right.png">
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
+      </div>
       <!-- </div> -->
     </div>
   </div>
 </div>
 
+
+
 <!-- libraries-->
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" /> -->
 <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"> -->
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
   integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

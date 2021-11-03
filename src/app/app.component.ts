@@ -3,35 +3,55 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'wa-table';
-
   filterAvailability: boolean = true;
   filterSearchAvailability: boolean = true;
-  noItemsAvailable: string = "No items available.";
-  tableConfig: Array<object> = [
-    { id: 1, header: "Id", classType: "tableHeader-left" },
-    { id: 2, header: "Item Name", sort: true, classType: "tableHeader-center" },
-    { id: 3, header: "Category", classType: "tableHeader-center" },
-    { id: 4, header: "Item Type", classType: "tableHeader-center" },
-    // { id: 5, type: "Policy", classType: "actions no-sort" },
-    { id: 7, type: "Action", classType: "actions no-sort" },
+  noItemsAvailable: string = 'No items available.';
+  tableHeaders: Array<object> = [
+    { id: 1, header: 'Id', classType: 'tableHeader-left' },
+    {
+      id: 2,
+      header: 'Item Name',
+      sort: false,
+      classType: 'tableHeader-center',
+    },
+    { id: 3, header: 'Category', classType: 'tableHeader-center' },
+    { id: 4, header: 'Item Type', classType: 'tableHeader-center' },
+    { id: 5, type: 'Action', classType: 'actions no-sort' },
   ];
 
-  tableInfo: Array<object> = [
-    { id: 1, header: "sku", type: "String", classType: "tableColumnData-left" },
-    { id: 2, header: "title", type: "String", classType: "tableColumnData-center" },
+  tableColumns: Array<object> = [
+    { id: 1, header: 'sku', type: 'String', classType: 'tableColumnData-left' },
     {
-      id: 3, header: "categoryList", type: "Array", classType: "tableColumnData-center", check: function (test) {
-        for (let key of test) {
-          return key.title
-        }
-      }
+      id: 2,
+      header: 'title',
+      type: 'String',
+      classType: 'tableColumnData-center',
     },
-    { id: 4, header: "is_modifier", type: "Boolean", classType: "tableColumnData-center", check: function (test) { return test ? 'Modifier' : 'Item'; } },
-    { id: 5, header: "action", },
+    {
+      id: 3,
+      header: 'categoryList',
+      type: 'Array',
+      classType: 'tableColumnData-center',
+      check: function (test) {
+        for (let key of test) {
+          return key.title;
+        }
+      },
+    },
+    {
+      id: 4,
+      header: 'is_modifier',
+      type: 'Boolean',
+      classType: 'tableColumnData-center',
+      check: function (test) {
+        return test ? 'Modifier' : 'Item';
+      },
+    },
+    { id: 5, header: 'action' },
   ];
 
   isFilterClicked = false;
@@ -40,94 +60,93 @@ export class AppComponent {
   sortItemName_asc = false;
   sortItemName_dsc = false;
 
-  tagActive = 0;
+  tagActive = 'All';
 
-
-  filterTags = [
-    { id: 1, title: "Fried Rice" }, { id: 1, title: "Dessert" }
-  ]
+  filterTags = ['Fried Rice', 'Dessert'];
 
   items = [
     {
-      "id": 300001,
-      "title": "Chicken Fried Rice",
-      "image_url": "https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg",
-      "status": 1,
-      "sku": "00123",
-      "categoryList": [
+      id: 300001,
+      title: 'Chicken Fried Rice',
+      image_url:
+        'https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg',
+      status: 1,
+      sku: '00123',
+      categoryList: [
         {
-          "id": 200003,
-          "title": "Fried Rice",
-        }
+          id: 200003,
+          title: 'Fried Rice',
+        },
       ],
-      "is_modifier": false,
+      is_modifier: false,
     },
 
     {
-      "id": 300002,
-      "title": "Vanilla Ice Cream",
-      "image_url": "https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg",
-      "status": 1,
-      "sku": "00124",
-      "categoryList": [
+      id: 300002,
+      title: 'Vanilla Ice Cream',
+      image_url:
+        'https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg',
+      status: 1,
+      sku: '00124',
+      categoryList: [
         {
-          "id": 200003,
-          "title": "Dessert",
-        }
+          id: 200003,
+          title: 'Dessert',
+        },
       ],
-      "is_modifier": false,
+      is_modifier: false,
     },
 
     {
-      "id": 300003,
-      "title": "Egg Fried Rice",
-      "image_url": "https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg",
-      "status": 1,
-      "sku": "00124",
-      "categoryList": [
+      id: 300003,
+      title: 'Egg Fried Rice',
+      image_url:
+        'https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg',
+      status: 1,
+      sku: '00125',
+      categoryList: [
         {
-          "id": 200003,
-          "title": "Fried Rice",
+          id: 200003,
+          title: 'Fried Rice',
         },
         {
-          "id": 200004,
-          "title": "Dinner",
-        }
+          id: 200004,
+          title: 'Dinner',
+        },
       ],
-      "is_modifier": false,
+      is_modifier: false,
     },
+  ];
 
-  ]
-
-
+  itemsTwo = [];
 
   itemNameSort() {
-    this.sortItemName_dsc = false
-    this.sortItemName_asc = !this.sortItemName_asc
+    this.sortItemName_dsc = false;
+    this.sortItemName_asc = !this.sortItemName_asc;
 
     if (this.sortItemName_asc) {
-      this.items.sort((a, b) => a.title.localeCompare(b.title))
+      this.items.sort((a, b) => a.title.localeCompare(b.title));
     } else {
-      this.sortItemName_dsc = true
-      this.items.sort((a, b) => b.title.localeCompare(a.title))
+      this.sortItemName_dsc = true;
+      this.items.sort((a, b) => b.title.localeCompare(a.title));
     }
-
   }
 
   onEditClick(e) {
-    console.log(e)
+    console.log(e);
   }
 
   onDeleteClick(e) {
-    console.log(e)
+    console.log(e);
   }
 
   searchItems(event) {
-    console.log(event.target.value)
+    console.log(event);
   }
 
   tagPressed(event) {
-    console.log(event.target.value)
+    console.log(event);
+    this.tagActive = event;
+    
   }
 }
-

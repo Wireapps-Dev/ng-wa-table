@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { NgWaTableComponent } from './ng-wa-table.component';
 
 
@@ -9,7 +10,8 @@ import { NgWaTableComponent } from './ng-wa-table.component';
     NgWaTableComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgxSkeletonLoaderModule
   ],
   exports: [
     NgWaTableComponent
