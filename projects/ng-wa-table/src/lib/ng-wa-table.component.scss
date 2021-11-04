@@ -5,6 +5,11 @@
   font-size: var(--header-font-size);
 }
 
+.card {
+  border: 1px solid var(--table-header-color);
+}
+
+// Tag Filter CSS
 .filterContainer {
   margin-top: 0;
   align-items: center;
@@ -17,19 +22,11 @@
 .filtersRow {
   margin: 0px;
 }
-
-
-.card {
-  border: 1px solid var(--table-header-color);
-}
-
 .second-row-filter {
   margin: 15px 0px;
   display: flex;
   justify-content: space-between;
 }
-
-// Tag Filter CSS
 
 .btn-filter {
   width: 100px;
@@ -48,9 +45,8 @@
   color: var(--filter-icon-color);
 }
 
-
 .tableFilterBox {
-  padding: 12px;
+  padding: 0;
   border: 1px solid var(--tagsColor);
   border-radius: 5px;
   overflow: hidden; 
@@ -109,6 +105,8 @@
   cursor: pointer;
   width: 50px;
 }
+
+// Table styles
 
 table.dataTable.no-footer {
   border-bottom: 0 !important;
@@ -222,74 +220,19 @@ tr {
   border-bottom-color: var(--table-header-color);
 }
 
+// table Action colum
 .actions {
   text-align: center;
 }
-
 .actions-set {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
 }
 
 .btnAction {
-  padding-right: var(--gap-between-actions);
   cursor: pointer;
   color: black;
-}
-
-// Pagination
-.page-link {
-  background-color: transparent;
-  border: none;
-  color: #777777;
-}
-.pagination > .active > a,
-.pagination > .active > a:focus,
-.pagination > .active > a:hover {
-  background-color: transparent;
-  border: none;
-  color: #2d5697;
-}
-
-.pagination a {
-  color: #777777;
-}
-
-li.disabled {
-  pointer-events: all !important;
-  cursor: not-allowed;
-}
-.page-item.disabled .page-link {
-  background-color: transparent;
-  border: none;
-}
-.paginationFooter {
-  background-color: #ecf3ff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 6vh;
-}
-
-.pagination-text {
-  color: #2d5697;
-}
-
-.pagination-left {
-  width: 40%;
-}
-
-.pagination-dropdown {
-  display: flex;
-  justify-content: space-between;
-}
-
-.pagination-dropdown p {
-  padding-left: 10px;
-}
-.pagination-right ul {
-  margin: 0;
 }
 
 //search
@@ -329,8 +272,6 @@ input.form-control:focus {
 ::placeholder {
   color: var(--search-placeholder-color) !important;
   border: none;
-
-  // opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder {
@@ -345,7 +286,13 @@ input.form-control:focus {
   border: none;
 }
 
-.statusLableActive {
+// Status bar style
+
+.tableDataStatus {
+  padding-left: 5%;
+}
+
+.statusLabelActive {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -360,7 +307,7 @@ input.form-control:focus {
   align-items: center;
 }
 
-.statusLableInActive {
+.statusLabelInActive {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -375,6 +322,3 @@ input.form-control:focus {
   align-items: center;
 }
 
-.switch {
-  border: none !important;
-}

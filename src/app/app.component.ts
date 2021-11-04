@@ -10,8 +10,10 @@ export class AppComponent {
   filterAvailability: boolean = true;
   filterSearchAvailability: boolean = true;
   noItemsAvailable: string = 'No items available.';
+  selectedItems = [];
   tableHeaders: Array<object> = [
-    { id: 1, header: 'Id', classType: 'tableHeader-left' },
+    {id: 1, header: "", checkbox: true, classType: ""},
+    { id: 1, header: 'SKU', classType: 'tableHeader-left' },
     {
       id: 2,
       header: 'Item Name',
@@ -20,14 +22,16 @@ export class AppComponent {
     },
     { id: 3, header: 'Category', classType: 'tableHeader-center' },
     { id: 4, header: 'Item Type', classType: 'tableHeader-center' },
-    { id: 5, type: 'Action', classType: 'actions no-sort' },
+    { id: 5, header: 'Status', classType: 'tableHeader-center' },
+    { id: 6, type: 'Action', classType: 'actions no-sort' },
   ];
 
   tableColumns: Array<object> = [
+    {id: 1, header: "id" , type: "Checkbox", classType: ""},
     { id: 1, header: 'sku', type: 'String', classType: 'tableColumnData-left' },
     {
       id: 2,
-      header: 'title',
+      header: 'name',
       type: 'String',
       classType: 'tableColumnData-center',
     },
@@ -51,7 +55,20 @@ export class AppComponent {
         return test ? 'Modifier' : 'Item';
       },
     },
-    { id: 5, header: 'action' },
+    {
+      id: 4,
+      header: 'status',
+      value: 'statusValue',
+      type: 'Status',
+      classType: 'tableDataStatus',
+    },
+    { id: 5, header: 'action', fontAwesomeIcon: 'fas fa-pen' },
+  ];
+
+  tableAction: Array<object> = [
+    {id: "view", type: "View", fontAwesomeIcon:"fas fa-eye" },
+    {id: "edit", type: "Edit", fontAwesomeIcon: "fas fa-pen " },
+    {id: "delete", type: "Delete", fontAwesomeIcon:"fas fa-trash" },
   ];
 
   isFilterClicked = false;
@@ -67,10 +84,11 @@ export class AppComponent {
   items = [
     {
       id: 300001,
-      title: 'Chicken Fried Rice',
+      name: 'Chicken Fried Rice',
       image_url:
         'https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg',
-      status: 1,
+      status: true,
+      statusValue: 'Active',
       sku: '00123',
       categoryList: [
         {
@@ -78,15 +96,16 @@ export class AppComponent {
           title: 'Fried Rice',
         },
       ],
-      is_modifier: false,
+      is_modifier: true,
     },
 
     {
       id: 300002,
-      title: 'Vanilla Ice Cream',
+      name: 'Vanilla Ice Cream',
       image_url:
         'https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg',
-      status: 1,
+      status: false,
+      statusValue: 'Inactive',
       sku: '00124',
       categoryList: [
         {
@@ -99,10 +118,11 @@ export class AppComponent {
 
     {
       id: 300003,
-      title: 'Egg Fried Rice',
+      name: 'Egg Fried Rice',
       image_url:
         'https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg',
-      status: 1,
+      status: false,
+      statusValue: 'Inactive',
       sku: '00125',
       categoryList: [
         {
@@ -125,10 +145,10 @@ export class AppComponent {
     this.sortItemName_asc = !this.sortItemName_asc;
 
     if (this.sortItemName_asc) {
-      this.items.sort((a, b) => a.title.localeCompare(b.title));
+      this.items.sort((a, b) => a.name.localeCompare(b.name));
     } else {
       this.sortItemName_dsc = true;
-      this.items.sort((a, b) => b.title.localeCompare(a.title));
+      this.items.sort((a, b) => b.name.localeCompare(a.name));
     }
   }
 
@@ -147,6 +167,16 @@ export class AppComponent {
   tagPressed(event) {
     console.log(event);
     this.tagActive = event;
-    
+  }
+
+  selectItem(event) {
+    console.log(event);
+  }
+
+  selectAll(){
+    for (let i = 0; i < this.items.length; i++) {
+      this.selectedItems.push(this.items[i].id);
+      
+    }
   }
 }

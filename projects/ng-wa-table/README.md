@@ -85,9 +85,6 @@ These properties should pass in order to display the rows and columns of the tab
 | isFilterClicked         | boolean       | Check filter is selected                                            |
 | filterClickHeight       | number        | If filter is selected define table height                           |
 | filterNotClickHeight    | number        | If filter is not selected define table height                       |
-| pages                   | array         | Enable pagination                                                   |
-| getMoreItems            | function      | Function used to load items per page that should be visible         |
-| currentPage             | number        | Current page number                                                 |
 | sortName_dsc            | boolean       | Sort in descending order                                            |
 | sortName_asc            | boolean       | Sort in ascending order                                             |
 | mainContainerPadding    | string        | Assign the values to main container padding                         |
@@ -97,7 +94,7 @@ These properties should pass in order to display the rows and columns of the tab
 | searchIconColor         | string        |   Assign the text color (Hex or name)                               |
 | tableHeaderColor        | string        |   Assign the color(Hex or name)                                     |
 | headerFontSize          | string        |   Assign the size value (px)                                        |
-| gapBetweenActions       | string        |   Assign the size value (%) for gap between the edit button and delete button                    |
+| gapBetweenActions       | string        |   Assign the size value (%) for gap between the action buttons      |
 | bodyFontSize            | string        |   Assign the size value (px)                                        |
 | headerTxtColor          | string        |   Assign the text color (Hex or name)                               |
 | bodyTxtColor            | string        |   Assign the text color (Hex or name)                               |

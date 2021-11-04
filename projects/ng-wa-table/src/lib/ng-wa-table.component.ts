@@ -40,7 +40,6 @@ export class NgWaTableComponent implements OnInit {
   @Input() searchBarTxtColor: any;
   @Input() searchPlaceholderColor: any;
   @Input() searchIconColor: any;
-  @Input() gapBetweenActions: any;
   @Input() filterIconColor: any;
   @Input() filterTextColor: any;
   @Input() filterBackgroundColor: any;
