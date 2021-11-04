@@ -29,17 +29,39 @@ npm install ng-wa-table
 
 ## How To Use
 
-Import the NgWaTableModule into your app.module.ts file. Then use the bellow code into your component.html file.
+1. Import NGX Skeleton loader npm package to your project. [NGX Skeleton loader](https://www.npmjs.com/package/ngx-skeleton-loader)
+2. Install Bootstrap 5 via CDN and jquery-3.5.1 into your project.
+3. Import the NgWaTableModule into your app.module.ts file like this,
+  import { CommonModule } from '@angular/common';
+  import { NgModule } from '@angular/core';
+  import { BrowserModule } from '@angular/platform-browser';
+  import { NgWaTableModule } from 'projects/ng-wa-table/src/public-api';
+
+  import { AppComponent } from './app.component';
+  import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
+  @NgModule({
+    declarations: [
+      AppComponent
+    ],
+    imports: [
+      BrowserModule,
+      CommonModule,
+      NgWaTableModule,
+      NgxSkeletonLoaderModule,
+
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
+
+4. Then use the bellow code into your component.html file.
 
 ```js
-<ng-wa-table [isDataLoaded]="isDataLoaded" [tableColumns]="tableInfo" [tableData]="items" 
-[filterClickTableHeight]="48" [filterClickTableHeight]="65" [tableHeaders]="tableConfig"
-[noItemsAvailable]="noItemsAvailable" [filterSearchAvailability]="filterSearchAvailability" 
-[filterAvailability]="filterAvailability" [mainContainerPadding]="'0 10% 0 10%'" 
-[headerFontSize]="'30px'" [bodyFontSize]="'14px'" [searchBarColor]="'#ECF3FF'" 
-[tableHeaderColor]="'#ECF3FF'" (onEditClick)="onEditClick($event)" 
-(onDeleteClick)="onDeleteClick($event)" [sortName_asc]="sortItemName_asc"
-[sortName_dsc]="sortItemName_dsc" (itemSort)="itemNameSort()"></ng-wa-table>
+<ng-wa-table [isDataLoaded]="isDataLoaded" [tableHeaders]="tableHeaders" [tableColumns]="tableColumns" [tableData]="items" 
+[noItemsAvailable]="noItemsAvailable" [headerFontSize]="'30px'" [bodyFontSize]="'14px'" [tableHeaderColor]="'#ECF3FF'" 
+(onEditClick)="onEditClick($event)" (onDeleteClick)="onDeleteClick($event)"></ng-wa-table>
 
 ```
 
