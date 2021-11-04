@@ -32,11 +32,11 @@ npm install ng-wa-table
 1. Import NGX Skeleton loader npm package to your project. [NGX Skeleton loader](https://www.npmjs.com/package/ngx-skeleton-loader)
 2. Install Bootstrap 5 via CDN and jquery-3.5.1 into your project.
 3. Import the NgWaTableModule into your app.module.ts file like this,
+
   import { CommonModule } from '@angular/common';
   import { NgModule } from '@angular/core';
   import { BrowserModule } from '@angular/platform-browser';
   import { NgWaTableModule } from 'projects/ng-wa-table/src/public-api';
-
   import { AppComponent } from './app.component';
   import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
@@ -49,7 +49,6 @@ npm install ng-wa-table
       CommonModule,
       NgWaTableModule,
       NgxSkeletonLoaderModule,
-
     ],
     providers: [],
     bootstrap: [AppComponent]
