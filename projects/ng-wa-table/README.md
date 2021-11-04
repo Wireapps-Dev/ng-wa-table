@@ -19,6 +19,9 @@ The NgWaTable is a powerful library to create unique and basic table using Angul
 - Table data Sorting
 - Table data Loader through ``ngx-skeleton-loader``
 
+## Angular Version
+Developed for version 11 .
+
 ## Installation
 
 ```js
@@ -29,10 +32,11 @@ npm install ng-wa-table
 
 ## How To Use
 
-1. Import NGX Skeleton loader npm package to your project. [NGX Skeleton loader](https://www.npmjs.com/package/ngx-skeleton-loader)
+1. Import  [NGX Skeleton loader](https://www.npmjs.com/package/ngx-skeleton-loader) npm library to your project.
 2. Install Bootstrap 5 via CDN and jquery-3.5.1 into your project.
 3. Import the NgWaTableModule into your app.module.ts file like this,
 
+```
   import { CommonModule } from '@angular/common';
   import { NgModule } from '@angular/core';
   import { BrowserModule } from '@angular/platform-browser';
@@ -54,6 +58,7 @@ npm install ng-wa-table
     bootstrap: [AppComponent]
   })
   export class AppModule { }
+```
 
 4. Then use the bellow code into your component.html file.
 
@@ -71,28 +76,31 @@ These properties should pass in order to display the rows and columns of the tab
 | Name                    | Type          | Description                                                         |
 | :---                    |    :---       |       :-------------                                                |
 | tableHeaders            | array         | An array of objects that each describe a header column              |
-| tableColumns            | array         | An array of objects that each describe a row                        |
+| tableColumns            | array         | An array of objects that each describe a each column                |
+| tableData               | array         | An array of objects that each describe a your items                 |
 | isDataLoaded            | boolean       | Show the loader                                                     |
 | filterAvailability      | boolean       | Availability of Filter categories                                   |
 | filterSearchAvailability| boolean       | Availability Search option                                          |
-| noItemsAvailable        | string        |     Show message when no item is available in the table             |
-| isFilterClicked         | boolean       |         Check filter is selected                                    |
-| filterClickHeight       | number        |         If filter is selected define table height                   |
-| filterNotClickHeight    | number        |    If filter is not selected define table height                    |
-| pages                   | array         |    Enable pagination                                                |
-| getMoreItems            | function      |    Function used to load items per page that should be visible      |
-| currentPage             | number        |    Current page number                                              |
-| sortName_dsc            | boolean       |    Sort in descending order                                         |
-| sortName_asc            | boolean       |   Sort in ascending order                                           |
-| mainContainerPadding    | string        |   Assign the values to container padding                            |
+| noItemsAvailable        | string        | Show message when no item is available in the table                 |
+| isFilterClicked         | boolean       | Check filter is selected                                            |
+| filterClickHeight       | number        | If filter is selected define table height                           |
+| filterNotClickHeight    | number        | If filter is not selected define table height                       |
+| pages                   | array         | Enable pagination                                                   |
+| getMoreItems            | function      | Function used to load items per page that should be visible         |
+| currentPage             | number        | Current page number                                                 |
+| sortName_dsc            | boolean       | Sort in descending order                                            |
+| sortName_asc            | boolean       | Sort in ascending order                                             |
+| mainContainerPadding    | string        | Assign the values to main container padding                         |
 | searchBarColor          | string        |   Assign the color(Hex or name)                                     |
+| searchBarTxtColor       | string        |   Assign the text color (Hex or name)                               |
+| searchPlaceholderColor  | string        |   Assign the text color (Hex or name)                               |
+| searchIconColor         | string        |   Assign the text color (Hex or name)                               |
 | tableHeaderColor        | string        |   Assign the color(Hex or name)                                     |
 | headerFontSize          | string        |   Assign the size value (px)                                        |
 | gapBetweenActions       | string        |   Assign the size value (%) for gap between the edit button and delete button                    |
 | bodyFontSize            | string        |   Assign the size value (px)                                        |
 | headerTxtColor          | string        |   Assign the text color (Hex or name)                               |
 | bodyTxtColor            | string        |   Assign the text color (Hex or name)                               |
-| searchBarTxtColor       | string        |   Assign the text color (Hex or name)                               |
 | onEditClick             | function      |   Function used to edit data                                        |
 | onDeleteClick           | function      |   Function used to delete data                                      |
 | onViewClick             | function      |   Function used to view data                                        |
