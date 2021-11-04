@@ -32,8 +32,7 @@
         <!-- Filter Options -->
         <div *ngIf="filterAvailability" class="collapse" id="filterCollapse" aria-labelledby="collapseExample">
           <div class="">
-            <div class="tableFilterBox col-md-12" style="overflow: hidden; margin: 8px 0 10px 8px; width: 98%;">
-              <label class="filterLbl" for="menuName">Filters</label>
+            <div class="tableFilterBox col-md-12" [style.--table-header-color]="tableHeaderColor">
               <div class="row filtersRow">
                 <div class="col-md-12 filterComponent">
 
