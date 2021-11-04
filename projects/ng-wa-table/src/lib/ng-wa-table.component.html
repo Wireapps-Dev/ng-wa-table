@@ -9,8 +9,7 @@
           <!-- Filter button -->
           <div *ngIf="filterAvailability" class=" p-2">
             <button type="button" class="btn-filter" data-bs-toggle="collapse" data-bs-target="#filterCollapse"
-              aria-expanded="false" aria-controls="collapseExample" (click)=onShowFilter()
-              [style.--filter-txt-color]="filterTextColor">
+              aria-expanded="false" aria-controls="collapseExample" (click)=onShowFilter() [style.--filter-txt-color]="filterTextColor" [style.--filter-backgroundColor]="filterBackgroundColor">
               <i class="fas fa-filter" [style.--filter-icon-color]="filterIconColor"></i>
               Filters
             </button>
@@ -32,23 +31,19 @@
         <!-- Filter Options -->
         <div *ngIf="filterAvailability" class="collapse" id="filterCollapse" aria-labelledby="collapseExample">
           <div class="">
-            <div class="tableFilterBox col-md-12" [style.--table-header-color]="tableHeaderColor">
+            <div class="tableFilterBox col-md-12"   [style.--tag-active-txt-color]="tagActiveTextColor" [style.--tag-inactive-txt-color]="tagInActiveTextColor" [style.--tagsColor]="tagsColor">
               <div class="row filtersRow">
                 <div class="col-md-12 filterComponent">
-
                   <diV class="row second-row-filter">
                     <div class="scrolling-wrapper">
                       <div class="card">
-                        <button [style.--table-header-color]="tableHeaderColor" [style.--header-txt-color]="headerTxtColor"
-                          [ngClass]="tagActive == 'All'  ? 'tags-filter-all-button-active' : 'tags-filter-all-button-inactive'"
+                        <button  [style.--tag-active-txt-color]="tagActiveTextColor" [style.--tag-inactive-txt-color]="tagInActiveTextColor" [style.--tagsColor]="tagsColor" [ngClass]="tagActive == 'All'  ? 'tags-filter-all-button-active' : 'tags-filter-all-button-inactive'"
                           (click)="onTagPressed('All')">
                           All
                         </button>
                       </div>
-
                       <div class="card" *ngFor="let tag of filterTags">
-                        <button [style.--table-header-color]="tableHeaderColor" [style.--header-txt-color]="headerTxtColor"
-                          [ngClass]="tagActive == tag  ? 'tags-filter-button-active' : 'tags-filter-button-inactive'"
+                        <button  [style.--tag-active-txt-color]="tagActiveTextColor" [style.--tag-inactive-txt-color]="tagInActiveTextColor" [style.--tagsColor]="tagsColor" [ngClass]="tagActive == tag  ? 'tags-filter-button-active' : 'tags-filter-button-inactive'"
                           (click)="onTagPressed(tag)">
                           {{tag}}
                         </button>

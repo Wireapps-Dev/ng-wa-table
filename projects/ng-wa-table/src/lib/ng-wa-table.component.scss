@@ -18,16 +18,6 @@
   margin: 0px;
 }
 
-.tableFilterBox {
-  margin: 0px;
-  padding: 12px;
-  border: 1px solid var(--table-header-color);
-  border-radius: 5px;
-  overflow: hidden;
-  margin: 8px 0 10px 8px;
-  width: 98%;
-  padding: 0;
-}
 
 .card {
   border: 1px solid var(--table-header-color);
@@ -39,14 +29,43 @@
   justify-content: space-between;
 }
 
+// Tag Filter CSS
+
+.btn-filter {
+  width: 100px;
+  height: 42px;
+  background: var(--filter-backgroundColor);
+  border: 1px solid var(--filter-txt-color);
+  border-radius: 6px;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--filter-txt-color);
+  cursor: pointer;
+}
+
+.fa-filter:before {
+  color: var(--filter-icon-color);
+}
+
+
+.tableFilterBox {
+  padding: 12px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  overflow: hidden; 
+  margin: 0 0 10px 8px;
+  width: 98%;
+}
+
 .tags-filter-button-active {
-  background-color: var(--table-header-color);
+  background-color: var(--tagsColor);
   border-radius: 20px;
   height: 32px;
-  border: solid var(--table-header-color);
+  border: solid var(--tagsColor);
   border-width: 0.5px;
   outline: none;
-  color: var(--header-txt-color);
+  color: var(--tag-active-txt-color);
   font-style: normal;
   font-size: 14px;
   cursor: pointer;
@@ -56,22 +75,22 @@
   background-color: #ffffff;
   border-radius: 20px;
   height: 32px;
-  border: solid #c9c9c9;
+  border: solid var(--tag-inactive-txt-color);
   border-width: 0.5px;
   outline: none;
-  color: #898989;
+  color: var(--tag-inactive-txt-color);
   font-style: normal;
   font-size: 14px;
   cursor: pointer;
 }
 .tags-filter-all-button-active {
-  background-color: var(--table-header-color);
+  background-color: var(--tagsColor);
   border-radius: 20px;
   height: 32px;
-  border: solid var(--table-header-color);
+  border: solid var(--tagsColor);
   border-width: 0.5px;
   outline: none;
-  color: var(--header-txt-color);
+  color: var(--tag-active-txt-color);
   font-style: normal;
   font-size: 14px;
   cursor: pointer;
@@ -81,10 +100,10 @@
   background-color: #ffffff;
   border-radius: 20px;
   height: 32px;
-  border: solid #c9c9c9;
+  border: solid var(--tag-inactive-txt-color);
   border-width: 0.5px;
   outline: none;
-  color: #898989;
+  color: var(--tag-inactive-txt-color);
   font-style: normal;
   font-size: 14px;
   cursor: pointer;
@@ -293,10 +312,6 @@ li.disabled {
   padding-left: 18px;
 }
 
-.fa-filter:before {
-  color: var(--filter-icon-color);
-}
-
 .fa-search:before {
   color: var(--search-bar-icon-color);
 }
@@ -328,19 +343,6 @@ input.form-control:focus {
   /* Microsoft Edge */
   color: var(--search-placeholder-color) !important;
   border: none;
-}
-
-.btn-filter {
-  width: 100px;
-  height: 42px;
-  background: none;
-  border: 1px solid var(--filter-txt-color);
-  border-radius: 6px;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: var(--filter-txt-color);
-  cursor: pointer;
 }
 
 .statusLableActive {

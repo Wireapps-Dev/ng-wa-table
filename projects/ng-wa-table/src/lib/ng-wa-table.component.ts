@@ -43,6 +43,10 @@ export class NgWaTableComponent implements OnInit {
   @Input() gapBetweenActions: any;
   @Input() filterIconColor: any;
   @Input() filterTextColor: any;
+  @Input() filterBackgroundColor: any;
+  @Input() tagsColor: any;
+  @Input() tagActiveTextColor: any;
+  @Input() tagInActiveTextColor: any;
 
   @Output() onEditClick = new EventEmitter<any>();
   @Output() onDeleteClick = new EventEmitter<any>();
