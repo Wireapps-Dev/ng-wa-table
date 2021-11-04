@@ -12,22 +12,22 @@ export class AppComponent {
   noItemsAvailable: string = 'No items available.';
   selectedItems = [];
   tableHeaders: Array<object> = [
-    {id: 1, header: "", checkbox: true, classType: ""},
-    { id: 1, header: 'SKU', classType: 'tableHeader-left' },
+    { id: 1, header: '', checkbox: true, classType: '' },
+    { id: 2, header: 'SKU', classType: 'tableHeader-left' },
     {
-      id: 2,
+      id: 3,
       header: 'Item Name',
       sort: false,
       classType: 'tableHeader-center',
     },
-    { id: 3, header: 'Category', classType: 'tableHeader-center' },
-    { id: 4, header: 'Item Type', classType: 'tableHeader-center' },
-    { id: 5, header: 'Status', classType: 'tableHeader-center' },
-    { id: 6, type: 'Action', classType: 'actions no-sort' },
+    { id: 4, header: 'Category', classType: 'tableHeader-center' },
+    { id: 5, header: 'Item Type', classType: 'tableHeader-center' },
+    { id: 6, header: 'Status', classType: 'tableHeader-center' },
+    { id: 7, type: 'Action', classType: 'actions no-sort' },
   ];
 
   tableColumns: Array<object> = [
-    {id: 1, header: "id" , type: "Checkbox", classType: ""},
+    { id: 1, header: 'id', type: 'Checkbox', classType: '' },
     { id: 1, header: 'sku', type: 'String', classType: 'tableColumnData-left' },
     {
       id: 2,
@@ -66,9 +66,9 @@ export class AppComponent {
   ];
 
   tableAction: Array<object> = [
-    {id: "view", type: "View", fontAwesomeIcon:"fas fa-eye" },
-    {id: "edit", type: "Edit", fontAwesomeIcon: "fas fa-pen " },
-    {id: "delete", type: "Delete", fontAwesomeIcon:"fas fa-trash" },
+    { id: 'view', type: 'View', fontAwesomeIcon: 'fas fa-eye' },
+    { id: 'edit', type: 'Edit', fontAwesomeIcon: 'fas fa-pen ' },
+    { id: 'delete', type: 'Delete', fontAwesomeIcon: 'fas fa-trash' },
   ];
 
   isFilterClicked = false;
@@ -160,6 +160,10 @@ export class AppComponent {
     console.log(e);
   }
 
+  onViewClick(e) {
+    console.log(e);
+  }
+
   searchItems(event) {
     console.log(event);
   }
@@ -173,10 +177,9 @@ export class AppComponent {
     console.log(event);
   }
 
-  selectAll(){
+  selectAll() {
     for (let i = 0; i < this.items.length; i++) {
       this.selectedItems.push(this.items[i].id);
-      
     }
   }
 }

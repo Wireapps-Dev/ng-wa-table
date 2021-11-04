@@ -6,7 +6,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./ng-wa-table.component.scss'],
 })
 export class NgWaTableComponent implements OnInit {
-
   @Input() isDataLoaded: boolean;
   @Input() tableData: any;
   @Input() tableHeaders: Array<object>;
@@ -22,7 +21,6 @@ export class NgWaTableComponent implements OnInit {
   @Input() sortName_dsc: boolean;
   @Input() tagActive: any;
   @Input() filterTags: any;
-  @Input() isFilterClicked: any;
   @Input() tableHeight: any;
   @Input() isAllSelected: any;
   @Input() selectedItems: any;
@@ -86,17 +84,8 @@ export class NgWaTableComponent implements OnInit {
     this.getMoreItems.emit(pageNumber);
   }
 
-  onShowFilter() {
-    this.showFilter.emit();
-    if (!this.isFilterClicked) {
-      this.isFilterClicked = true;
-    } else {
-      this.isFilterClicked = false;
-    }
-  }
-
   onTagPressed(id: number) {
-    console.log(id, "toggle")
+    console.log(id, 'toggle');
     this.tagPressed.emit(id);
   }
 
@@ -115,15 +104,6 @@ export class NgWaTableComponent implements OnInit {
       this.onChangeAutoAccepting.emit({ int: data, e: accept });
     }
   }
-
-  getRefreshFilters() {
-    if (!this.isFilterClicked) {
-      this.isFilterClicked = true;
-    } else {
-      this.isFilterClicked = false;
-    }
-  }
-
   selectAll() {
     this.checkboxSelector.emit();
   }
