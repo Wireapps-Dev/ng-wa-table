@@ -188,29 +188,42 @@ items = [
 
 ## Table Columns
 
-Using the table data values you need to bind them to each column. In order to do that config an object consist with these properties: 
+In order to bind tableData values to each column, you can assign an object that consist with these properties: 
   * id - Used to identify the object unique
-  * header - mention a property from your tableData array and If action column is available pass "action" as the header.
+  * header - Mention exact property name from your tableData array as the header and If it is an action column, then pass "action" as the header.
   * type - There are different types of values in your tableData array. They can be numbers, titles, true or false values, arrays or a status bar. In here you need to mention what type of data should bind to each column. Those types are,
     1. String - The values that doesn't change & display as it is in the tableData array. 
     2. Array - If there is an array of objects.  
     3. Boolean - If true or false deciding a value we need to show in the column.
-    4. Status - If you need to show a status bar, then use this type.
+    4. Status - If you need to show a label, then use this type.
+    4. Checkbox - If you need to show a checkbox in every row.
   * classType - To align the cell name specify the type. There are 3 types as,
     * tableColumnData-left - Align the cell data to left.
     * tableColumnData-right - Align the cell data to right.
     * tableColumnData-center - Align the cell data to center.
   * check(Only needed if type is a Array or a Boolean) - You can define a function that specify what need to be do from the value you get. As in the below example, For the type Boolean, if it is true return the 'Modifier' or else return 'Item'.
-  * value - Mention a property from your tableData array, for the value that need to show inside the status bar. 
+  * value - Mention a property from your tableData array, for the value that need to show inside the status label. 
  
-If it's a Status bar,
- * header(boolean) - If the status it true or not.
+If Status label column exist then the object look like this,
+```
+ {
+      id: 5,
+      header: 'status',
+      value: 'statusValue',
+      type: 'Status',
+      classType: 'tableDataStatus',
+    },
+```
+These properties should be passed, 
+ * header(boolean) - Mention exact property name from your tableData.
  * type - Type will be status. 
- * value - Value that need to display in the status bar. 
+ * value(String) - Mention exact property name from your tableData to display as the label value. 
+
+ To get the data as in the example table image you need to assign column object like this, 
 
 ```
   tableColumns: Array<object> = [
-    { id: 1, header: 'id', type: 'Checkbox', classType: '' },
+    { id: 1, header: 'id', type: 'Checkbox', classType: '' }, 
     { id: 2, header: 'sku', type: 'String', classType: 'tableColumnData-left' },
     {
       id: 3,
@@ -253,8 +266,9 @@ If it's a Status bar,
 
 You need to pass an array of object and each object need to have these properties: 
   * id - Used to identify the object unique
-  * type - There are 3 types available. They are View, Edit and Delete.
+  * type - View, Edit and Delete. (Currently we are supporting only these 3 actions)
   * fontAwesomeIcon - Mention the Font Awesome class for a particular icon.
+
 
 ```
  tableAction: Array<object> = [
@@ -267,7 +281,7 @@ You need to pass an array of object and each object need to have these propertie
 ## Filters
 
 If you want to add filter option to the table then "filterAvailability" should be true. In order to work it properly these are the props that you need to send. They are, 
-* filterTags   - you need to send a array of Strings which you need to add as filter options. 
+* filterTags   - You need to send a array of Strings which you need to add as filter options. 
 * tagPressed  -  Function to Filter tags                                       
 * tagActive - You need to pass 'All' as the Initial value for tagActive. After that, assign the return value of tagPressed function to tagActive. 
 

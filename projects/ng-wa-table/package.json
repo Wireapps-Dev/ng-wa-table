@@ -2,8 +2,8 @@
   "name": "ng-wa-table",
   "version": "0.1.6",
   "author": {
-    "name": "Wire Apps",
-    "url": "https://github.com/Wireapps-Dev"
+    "name": "Delivergate",
+    "url": "https://github.com/Delivergate-Dev"
   },
   "contributors": [
     {
@@ -31,10 +31,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Wireapps-Dev/ng-wa-table.git"
+    "url": "https://github.com/Delivergate-Dev/ng-wa-table.git"
   },
-  "homepage": "https://github.com/Wireapps-Dev/ng-wa-table.git",
-  "bugs": "https://github.com/Wireapps-Dev/ng-wa-table.git/issues",
+  "homepage": "https://github.com/Delivergate-Dev/ng-wa-table.git",
+  "bugs": "https://github.com/Delivergate-Dev/ng-wa-table.git/issues",
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^11.2.14",
