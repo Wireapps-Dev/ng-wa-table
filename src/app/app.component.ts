@@ -11,19 +11,25 @@ export class AppComponent {
   filterSearchAvailability: boolean = true;
   noItemsAvailable: string = 'No items available.';
   selectedItems = [];
+  isFilterClicked:boolean = false;
+  isDataLoaded:boolean = true;
+
+  sortItemName_asc: boolean = false;
+  sortItemName_dsc:boolean = false;
+
   tableHeaders: Array<object> = [
     { id: 1, header: '', checkbox: true, classType: '' },
     { id: 2, header: 'SKU', classType: 'tableHeader-left' },
     {
       id: 3,
       header: 'Item Name',
-      sort: false,
+      sort: true,
       classType: 'tableHeader-center',
     },
     { id: 4, header: 'Category', classType: 'tableHeader-center' },
     { id: 5, header: 'Item Type', classType: 'tableHeader-center' },
     { id: 6, header: 'Status', classType: 'tableHeader-center' },
-    { id: 7, type: 'Action', classType: 'actions no-sort' },
+    { id: 7, type: 'Action', classType: 'actions' },
   ];
 
   tableColumns: Array<object> = [
@@ -70,12 +76,6 @@ export class AppComponent {
     { id: 'edit', type: 'Edit', fontAwesomeIcon: 'fas fa-pen ' },
     { id: 'delete', type: 'Delete', fontAwesomeIcon: 'fas fa-trash' },
   ];
-
-  isFilterClicked = false;
-  isDataLoaded = true;
-
-  sortItemName_asc = false;
-  sortItemName_dsc = false;
 
   tagActive = 'All';
 

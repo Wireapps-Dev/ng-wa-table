@@ -1,7 +1,7 @@
 <ng-wa-table [tableHeaders]="tableHeaders" [tableColumns]="tableColumns" [tableData]="items" [tableAction]="tableAction"
   [isDataLoaded]="true" [filterAvailability]="true" [filterSearchAvailability]="true"
-  [noItemsAvailable]="noItemsAvailable" (itemSort)="itemNameSort()" [sortName_asc]="sortItemName_asc"
-  [sortName_dsc]="sortItemName_dsc" [mainContainerPadding]="'10% 10% 0 10%'" [tableHeaderColor]="'green'"
+  [noItemsAvailable]="noItemsAvailable" (itemSort)="itemNameSort()" 
+ [mainContainerPadding]="'10% 10% 0 10%'" [tableHeaderColor]="'green'"
   [headerFontSize]="'14px'" [headerTxtColor]="'white'" [bodyFontSize]="'14px'" [bodyTxtColor]="'black'"
   [tableHeight]="48" (onEditClick)="onEditClick($event)" (onDeleteClick)="onDeleteClick($event)"
   (onViewClick)="onViewClick($event)" (search)="searchItems($event)" [searchBarColor]="'green'"
@@ -10,3 +10,5 @@
   [tagsColor]="'green'" [tagActiveTextColor]="'white'" [tagInActiveTextColor]="'green'"
   (tagPressed)="tagPressed($event)" [tagActive]="tagActive" (checkboxSelector)="selectAll()"
   [selectedItems]="selectedItems" (selectItem)="selectItem($event)"></ng-wa-table>
+
+ 

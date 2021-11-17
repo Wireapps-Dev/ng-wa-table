@@ -85,29 +85,13 @@
                           top: 0;
                           right: 68px;
                           flex-direction: column;">
-                      <span style="padding-left: 10px;">
-                        <i class="fal fa-sort-up"></i>
-
+                      <span class="sortIcon" style="padding-left: 10px;" [style.--header-txt-color]="headerTxtColor">
+                        <i class="fas fa-sort-up"></i>
                       </span>
-                      <span *ngIf="!sortName_dsc || !sortName_asc" style="padding-left: 10px;">
-                        <i class="fal fa-sort-down"></i>
-
+                      <span class="sortIcon" style="padding-left: 10px;" [style.--header-txt-color]="headerTxtColor">
+                        <i class="fas fa-sort-down"></i>
                       </span>
                     </div>
-                    <span *ngIf="sortName_asc" style="display: flex;
-                        position: absolute;
-                        top: 2px;
-                        right: 68px;
-                        flex-direction: column;">
-                      <i class="fas fa-sort-up"></i>
-                    </span>
-                    <span *ngIf="!sortName_asc && sortName_dsc" style="display: flex;
-                        position: absolute;
-                        bottom: -1px;
-                        right: 68px;
-                        flex-direction: column;">
-                      <i class="fas fa-sort-down"></i>
-                    </span>
                   </div>
                   <!-- Actions -->
                   <div *ngIf=" field.type === 'Action'" [ngClass]="field.classType">

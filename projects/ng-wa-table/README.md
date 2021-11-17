@@ -67,12 +67,13 @@ crossorigin="anonymous"></script>
 
 4. Then use the bellow code into your component.html file.
 
-```js
+```
 <ng-wa-table [isDataLoaded]="isDataLoaded" [tableHeaders]="tableHeaders" [tableColumns]="tableColumns" [tableData]="items" 
 [noItemsAvailable]="noItemsAvailable" [headerFontSize]="'30px'" [bodyFontSize]="'14px'" [tableHeaderColor]="'#ECF3FF'" 
 (onEditClick)="onEditClick($event)" (onDeleteClick)="onDeleteClick($event)"></ng-wa-table>
 
 ```
+Remember:- Properties should be same but assign value names can be change.
 
 ## Available Props
 
@@ -89,8 +90,6 @@ These properties should pass in order to display the rows and columns of the tab
 | filterSearchAvailability| boolean       | Availability Search option                                          |
 | noItemsAvailable        | string        | Show message when no item is available in the table                 |
 | itemSort                | function      |   Function used to sort the items in the table                      |
-| sortName_dsc            | boolean       | Sort in descending order                                            |
-| sortName_asc            | boolean       | Sort in ascending order                                             |
 | mainContainerPadding    | string        | Assign the values to main container padding                         |
 | tableHeaderColor        | string        |   Assign the color(Hex or name)                                     |
 | headerFontSize          | string        |   Assign the size value (px)                                        |
@@ -105,50 +104,180 @@ These properties should pass in order to display the rows and columns of the tab
 | searchBarColor          | string        |   Assign the color(Hex or name)                                     |
 | searchBarTxtColor       | string        |   Assign the text color (Hex or name)                               |
 | searchPlaceholderColor  | string        |   Assign the text color (Hex or name)                               |
-| searchIconColor         | string        |   Assign the text color (Hex or name)                               |
-| filterIconColor         | string        |   Assign the text color (Hex or name)                               |
-| filterTextColor         | string        |   Assign the text color (Hex or name)                               |
-| filterBackgroundColor   | string        |   Assign the text color (Hex or name)                               |
+| searchIconColor         | string        |   Assign the icon color (Hex or name)                               |
+| filterIconColor         | string        |   Assign the icon color (Hex or name) to filter button              |
+| filterTextColor         | string        |   Assign the text color (Hex or name) to filter button              |
+| filterBackgroundColor   | string        |   Assign the background color (Hex or name) to filter button        |
 | filterTags              | array         |   Array of strings                                                  |
-| tagsColor               | string        |   Assign the text color (Hex or name)                               |
+| tagsColor               | string        |   Assign the tag color (Hex or name) to filter tags                 |
 | tagActiveTextColor      | string        |   Assign the text color (Hex or name)                               |
 | tagInActiveTextColor    | string        |   Assign the text color (Hex or name)                               |
-| tagPressed              | function      |   Function used to select tags in the filter                        |
-| tagActive               | String        |   Assign the Active tag for Filter box                              |
+| tagPressed              | function      |   Function to Filter tag                                            |
+| tagActive               | String        |   Assign the active tag for Filter box                              |
 | checkboxSelector        | function      |   Function used to get all checkboxes selected                      |
 | selectedItems           | array         |   Function used to get all checkboxes selected                      |
 | selectItem              | function      |   Function used to get a checkbox that selected                     |
 
-## Table Headers Array
-In this array you need to mention these 4 things: 
+
+## Table Headers 
+In here you need to config an object consist with these properties: 
   * id - Used to identify the object unique
-  * header - Name of the column and if you don't want to mention the a name then leave it as a empty string
-  * header - Name of the column and if you don't want to mention the a name then leave it as a empty string
+  * header - Name of the table column header and if you don't want to mention the a name then leave it as a empty string
+  * sort(Boolean) - Boolean value that indicate sort icons should display or not. 
+  * type - Only use when you have actions like edit, delete or view. 
   * classType - To align the header name specify the type. There are 3 types as,
     * tableHeader-left - Align the header to left.
     * tableHeader-right - Align the header to right.
     * tableHeader-center - Align the header to center.
-  * checkbox - This will enable checkbox and it will select all the checkboxes in the table rows. 
+    * actions - Align action icons to center.
+  * checkbox(Boolean) - This will enable checkbox and it will select all the checkboxes in the table rows. 
 
 ```
   tableHeaders: Array<object> = [
     { id: 1, header: '', checkbox: true, classType: '' },
     { id: 2, header: 'SKU', classType: 'tableHeader-left' },
-    {
-      id: 3,
-      header: 'Item Name',
-      sort: false,
-      classType: 'tableHeader-center',
+    { id: 3, header: 'Item Name', sort: false, classType: 'tableHeader-center',
     },
     { id: 4, header: 'Category', classType: 'tableHeader-center' },
     { id: 5, header: 'Item Type', classType: 'tableHeader-center' },
     { id: 6, header: 'Status', classType: 'tableHeader-center' },
-    { id: 7, type: 'Action', classType: 'actions no-sort' },
+    { id: 7, type: 'Action', classType: 'actions' },
   ];
+```
+
+## Table Data
+In the "tableData" property you are sending an array of objects. It's look like this, 
+
+```
+items = [
+    {
+      id: 300001,
+      name: 'Chicken Fried Rice',
+      image_url:
+        'https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg',
+      status: true,
+      statusValue: 'Active',
+      sku: '00123',
+      categoryList: [
+        {
+          id: 200003,
+          title: 'Fried Rice',
+        },
+      ],
+      is_modifier: true,
+    },
+
+    {
+      id: 300002,
+      name: 'Vanilla Ice Cream',
+      image_url:
+        'https://rs-menus-api.roocdn.com/images/062f785d-a54e-4789-9350-0e2e1a5ea1a2/image.jpeg',
+      status: false,
+      statusValue: 'Inactive',
+      sku: '00124',
+      categoryList: [
+        {
+          id: 200003,
+          title: 'Dessert',
+        },
+      ],
+      is_modifier: false,
+    },
+]
 ```
 
 ## Table Columns
 
+Using the table data values you need to bind them to each column. In order to do that config an object consist with these properties: 
+  * id - Used to identify the object unique
+  * header - mention a property from your tableData array.
+  * type - There are different types of values in your tableData array. They can be numbers, titles, true or false values, arrays or a status bar. In here you need to mention what type of data should bind to each column. Those types are,
+    1. String - The values that doesn't change & display as it is in the tableData array. 
+    2. Array - If there is an array of objects.  
+    3. Boolean - If true or false deciding a value we need to show in the column.
+    4. Status - If you need to show a status bar, then use this type.
+  * classType - To align the cell name specify the type. There are 3 types as,
+    * tableColumnData-left - Align the cell data to left.
+    * tableColumnData-right - Align the cell data to right.
+    * tableColumnData-center - Align the cell data to center.
+  * check(Only needed if type is a Array or a Boolean) - You can define a function that specify what need to be do from the value you get. As in the below example, For the type Boolean, if it is true return the 'Modifier' or else return 'Item'.
+  * value - Mention a property from your tableData array, for the value that need to show inside the status bar. 
+ 
+If it's a Status bar,
+ * header(boolean) - If the status it true or not.
+ * type - Type will be status. 
+ * value - Value that need to display in the status bar. 
+
+```
+  tableColumns: Array<object> = [
+    { id: 1, header: 'id', type: 'Checkbox', classType: '' },
+    { id: 2, header: 'sku', type: 'String', classType: 'tableColumnData-left' },
+    {
+      id: 3,
+      header: 'name',
+      type: 'String',
+      classType: 'tableColumnData-center',
+    },
+    {
+      id: 4,
+      header: 'categoryList',
+      type: 'Array',
+      check: function (test) {
+        for (let key of test) {
+          return key.title;
+        }
+      },
+      classType: 'tableColumnData-center',
+    },
+    {
+      id: 5,
+      header: 'is_modifier',
+      type: 'Boolean',
+      check: function (test) {
+        return test ? 'Modifier' : 'Item';
+      },
+      classType: 'tableColumnData-center',
+    },
+    {
+      id: 5,
+      header: 'status',
+      value: 'statusValue',
+      type: 'Status',
+      classType: 'tableDataStatus',
+    },
+    { id: 6, header: 'action', fontAwesomeIcon: 'fas fa-pen' },
+  ];
+```
+
+## Table Actions
+
+You need to pass an array of object and each object need to have these properties: 
+  * id - Used to identify the object unique
+  * type - There are 3 types available. They are View, Edit and Delete.
+  * fontAwesomeIcon - Mention the Font Awesome class for a particular icon.
+
+```
+ tableAction: Array<object> = [
+    { id: '1', type: 'View', fontAwesomeIcon: 'fas fa-eye' },
+    { id: '2', type: 'Edit', fontAwesomeIcon: 'fas fa-pen ' },
+    { id: '3', type: 'Delete', fontAwesomeIcon: 'fas fa-trash' },
+  ];
+```
+
+## Filters
+
+If you want to add filter option to the table then "filterAvailability" should be true. In order to work it properly these are the props that you need to send. They are, 
+* filterTags   - you need to send a array of Strings which you need to add as filter options. 
+* tagPressed  -  Function to Filter tags                                       
+* tagActive - You need to pass 'All' as the Initial value for tagActive. After that, assign the return value of tagPressed function to tagActive. 
+
+In order to style the filter box you can include these properties,
+* filterIconColor  -  Assign the icon color (Hex or name) to filter button        
+* filterTextColor  -  Assign the text color (Hex or name) to filter button     
+* filterBackgroundColor  -  Assign the background color (Hex or name) to filter button                                             
+* tagsColor -   Assign the tag color (Hex or name) to filter tags              
+* tagActiveTextColor  -  Assign the text color (Hex or name)                            
+* tagInActiveTextColor  - Assign the text color (Hex or name)                                                   
 
 
 ## License
