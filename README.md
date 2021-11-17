@@ -191,7 +191,7 @@ items = [
 In order to bind tableData values to each column, you can assign an object that consist with these properties: 
   * id - Used to identify the object unique
   * header - Mention exact property name from your tableData array as the header and If it is an action column, then pass "action" as the header.
-  * type - There are different types of values in your tableData array. They can be numbers, titles, true or false values, arrays or a status bar. In here you need to mention what type of data should bind to each column. Those types are,
+  * type - There are different types of values in your tableData array. They can be numbers, titles, true or false values, arrays or a status label. In here you need to mention what type of data should bind to each column. Those types are,
     1. String - The values that doesn't change & display as it is in the tableData array. 
     2. Array - If there is an array of objects.  
     3. Boolean - If true or false deciding a value we need to show in the column.
