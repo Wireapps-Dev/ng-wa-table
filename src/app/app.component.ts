@@ -68,7 +68,7 @@ export class AppComponent {
       type: 'Status',
       classType: 'tableDataStatus',
     },
-    { id: 5, header: 'action', fontAwesomeIcon: 'fas fa-pen' },
+    { id: 5, header: 'action', },
   ];
 
   tableAction: Array<object> = [

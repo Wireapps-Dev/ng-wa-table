@@ -77,7 +77,7 @@ Remember:- Properties should be same but assign value names can be change.
 
 ## Available Props
 
-These properties should pass in order to display the rows and columns of the table,
+These properties can be used to customize your rows and columns of the table,
 
 | Name                    | Type          | Description                                                         |
 | :---                    |    :---       |       :-------------                                                |
@@ -146,7 +146,7 @@ In here you need to config an object consist with these properties:
 ```
 
 ## Table Data
-In the "tableData" property you are sending an array of objects. It's look like this, 
+In the "tableData" property you can assigning an array of objects to show data in your table. It's look like this, 
 
 ```
 items = [
@@ -190,7 +190,7 @@ items = [
 
 Using the table data values you need to bind them to each column. In order to do that config an object consist with these properties: 
   * id - Used to identify the object unique
-  * header - mention a property from your tableData array.
+  * header - mention a property from your tableData array and If action column is available pass "action" as the header.
   * type - There are different types of values in your tableData array. They can be numbers, titles, true or false values, arrays or a status bar. In here you need to mention what type of data should bind to each column. Those types are,
     1. String - The values that doesn't change & display as it is in the tableData array. 
     2. Array - If there is an array of objects.  
@@ -245,7 +245,7 @@ If it's a Status bar,
       type: 'Status',
       classType: 'tableDataStatus',
     },
-    { id: 6, header: 'action', fontAwesomeIcon: 'fas fa-pen' },
+    { id: 6, header: 'action'},
   ];
 ```
 
