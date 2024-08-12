@@ -1,6 +1,6 @@
 {
   "name": "ng-wa-table",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": {
     "name": "Delivergate",
     "url": "https://github.com/Delivergate-Dev"
@@ -19,7 +19,7 @@
   ],
   "keywords": [
     "angular",
-    "angular7",
+    "angular18",
     "typescript",
     "ngx",
     "ng2",
@@ -27,7 +27,8 @@
     "ng5",
     "ng6",
     "ng7",
-    "table"
+    "table",
+    "Angular Table"
   ],
   "repository": {
     "type": "git",
@@ -38,11 +39,10 @@
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^18.1.4",
-    "@angular/core": "^18.1.4",
+    "@angular/core": "^11.0.0 || ^18.0.0",
     "bootstrap": "^4.4.0"
   },
-  "dependencies": {
-    "@angular/core": "^18.1.4",
+  "dependencies": { 
     "tslib": "^2.0.0"
   }
 }

@@ -20,7 +20,7 @@ The NgWaTable is a powerful library to create unique and basic table using Angul
 - Table data Loader through ``ngx-skeleton-loader``
 
 ## Angular Version
-Developed for version 11 .
+Developed for version 18 .
 
 ## Installation
 
