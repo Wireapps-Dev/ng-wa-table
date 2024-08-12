@@ -42,6 +42,7 @@
     "bootstrap": "^4.4.0"
   },
   "dependencies": {
+    "@angular/core": "^18.1.4",
     "tslib": "^2.0.0"
   }
 }
